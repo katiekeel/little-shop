@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.feature "when a visitor visits items index" do
   scenario "they can see all items" do
     item_1, item_2, item_3 = create_list(:item, 3)
