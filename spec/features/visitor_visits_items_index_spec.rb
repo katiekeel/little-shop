@@ -6,8 +6,6 @@ RSpec.feature "when a visitor visits items index" do
 
     visit items_path
 
-    save_and_open_page
-
     expect(page).to have_content(item_1.title)
     expect(page).to have_content(item_2.title)
     expect(page).to have_content(item_3.title)
