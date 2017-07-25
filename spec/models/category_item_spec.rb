@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe CategoryItem, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "Relationships" do
+    it { should belong_to(:category) }
+    it { should belong_to(:item) }
+  end
 end
