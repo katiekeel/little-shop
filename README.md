@@ -1,4 +1,4 @@
-# Tom Bombadil's Little Shop of Hobbits
+# Anduin: for all your Middle Earth needs
 
 A basic e-commerce app with cart/order functionality and a sweet nerdy theme.
 
