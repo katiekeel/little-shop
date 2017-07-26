@@ -1,0 +1,19 @@
+<div class="container text-center">
+  <h4>Cart Total: <%= number_to_currency(@cart.total_price, :unit => "$") %></h4>
+
+  <div class="row">
+
+  <% @items.each do |item| %>
+  <div class="col-md-3 col-sm-6 col-lg-3">
+    <img class="img-responsive item-images img-thumbnail" src="<%= item.image_path %>" alt="item image"><br/>
+     <%= item.title %><br/>
+     <%= item.description %><br/>
+     <%= number_to_currency(item.price, :unit => "$") %><br/>
+     Quantity: <%= @cart.contents[item.id.to_s] %><br/><br/>
+     Item Total: <%= number_to_currency((item.price * @cart.contents[item.id.to_s]), :unit => "$") %>
+     <%= button_to "Delete", cart_delete_path(item_id: item.id), class: "btn btn-default"  %>
+  </div>
+  <% end %>
+
+    </div>
+  </div>
