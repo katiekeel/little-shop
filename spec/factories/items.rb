@@ -14,5 +14,6 @@ FactoryGirl.define do
     end
 
     image_path "https://vignette2.wikia.nocookie.net/lotr/images/5/54/Untitledjk.png"
+
   end
 end

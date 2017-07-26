@@ -13,5 +13,5 @@ Item.create!(title: "Bill the Pony", description: "Stolen from the bad guy in Br
 Item.create!(title: "Sting", description: "The orc-detecting sword", price: 10000.00, image_path: "http://www.darkknightarmoury.com/images/Product/large/LOTR-02.png")
 Item.create!(title: "Anduril", description: "Only the heir of Elendil may wield it", price: 500000.00, image_path: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiM4nU25HRNZSQUYZQIA5TCq0uIy_2WJ3LFzwdIewAcCvTRRZsgQ")
 Item.create!(title: "Hobbit-Hole Door", description: "A fine home entrance", price: 350.00, image_path: "https://s-media-cache-ak0.pinimg.com/736x/97/a5/f6/97a5f6329b3f8fc4ee7978a6c101a229--hobbit-house-interior-hobbit-door.jpg")
-Item.create!(title: "The Ring", description: "Your very own precious! What a bargain", price: 1000000000.00, image_path: "https://i.ytimg.com/vi/ZLjKYj0NWmM/maxresdefault.jpg")
+Item.create!(title: "The Ring", description: "Your very own precious! What a bargain", price: 1000000000000.00, image_path: "https://i.ytimg.com/vi/ZLjKYj0NWmM/maxresdefault.jpg")
 Item.create!(title: "Shadowfax", description: "King of the horses of Rohan", price: 10000.00, image_path: "http://images2.fanpop.com/image/photos/14000000/Shadowfax-shadowfax-14039546-600-714.jpg")
