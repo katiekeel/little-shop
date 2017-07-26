@@ -2,7 +2,6 @@ class CartsController < ApplicationController
   include ActionView::Helpers::TextHelper
 
   def index
-    byebug
     @items = Item.find(@cart.contents.keys)
   end
 

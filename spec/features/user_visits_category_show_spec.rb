@@ -5,7 +5,7 @@ RSpec.feature "User visits category show page" do
     cat_1.items << [item_1, item_2]
     cat_2.items << [item_3, item_4]
 
-    visit ("/#{cat_1.title}")
+    visit ("/#{cat_1.title.split.map(&:downcase)*' '.gsub!(' ', '%20')}")
 
     expect(page).to have_content(item_1.title)
     expect(page).to have_content(item_2.title)
