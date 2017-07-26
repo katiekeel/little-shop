@@ -12,7 +12,7 @@ class CartsController < ApplicationController
     session[:cart] = @cart.contents
 
     flash[:notice] = "You now have #{pluralize(session[:cart][item.id.to_s], item.title)}."
-    redirect_to items_path
+    redirect_back(fallback_location: items_path)
   end
 
   def delete
