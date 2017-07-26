@@ -14,9 +14,9 @@ describe "User visits items index page and" do
     # And I should see a small image, title, description and price for the item I just added
     expect(page).to have_content item.title
     expect(page).to have_content item.description
-    expect(page).to have_content item.price
+    expect(page).to have_content item.price.to_f.round(2)
     expect(page).to have_css("img", count: 1)
     # And there should be a "total" price for the cart that should be the sum of all items in the cart
-    expect(page).to have_content "Cart Total: #{item.price}"
+    expect(page).to have_content "Cart Total: $#{item.price.to_f.round(2)}"
   end
 end

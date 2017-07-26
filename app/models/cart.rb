@@ -11,14 +11,11 @@ class Cart
   end
 
   def total_price
-    byebug
-    if @contents.count > 1
-      items = Item.find(contents.keys)
-      items.sum(:price)
-    else
-      (Item.find(contents.keys).first.price * contents.keys.first.to_d)
-    end
+    contents.map do |key, value|
+      Item.where(id: key).sum(:price) * value
+    end.sum
   end
+
 
 
 end
