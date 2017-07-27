@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>LittleShop</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>LittleShop</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
   <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
@@ -80,17 +80,20 @@
       </div>
     </div>
   </nav>
-
+  <% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>"><h3 class="flash_header"> <%= value %> </h3></div>
+  <% end %>
     <%= yield %>
   </body>
 
-  <footer>
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-12 text-center page-titles">
-                  <p>Copyright &copy; Tom Bombadil 2014</p>
-              </div>
-          </div>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center page-titles">
+        <p>Copyright &copy; Tom Bombadil 2014</p>
       </div>
-  </footer>
+    </div>
+  </div>
+</footer>
 </html>

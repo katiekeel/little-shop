@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :carts, only: [:create]
 
-  get '/cart_delete', to: "carts#delete"
+  delete '/cart', to: "carts#destroy"
 
   get '/cart', to: 'carts#index'
 

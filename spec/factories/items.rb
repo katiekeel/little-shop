@@ -10,7 +10,7 @@ FactoryGirl.define do
     end
 
     sequence :price do |n|
-      "1.0#{n}"
+      "#{n}.00"
     end
 
     image_path "https://vignette2.wikia.nocookie.net/lotr/images/5/54/Untitledjk.png"

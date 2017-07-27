@@ -20,6 +20,7 @@ class Cart
     end.sum
   end
 
-
-
+  def delete_item(id)
+    contents.delete_if {|key, value| key == id.to_s}
+  end
 end
