@@ -10,5 +10,5 @@ Rails.application.routes.draw do
 
   get '/about', to: 'categories#about'
   get '/:category_title', to: 'categories#show'
-
+  root to: 'welcome#index'
 end
