@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   resources :carts, only: [:create]
 
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+
   post '/cart', to: "carts#update"
   delete '/cart', to: "carts#destroy"
 
