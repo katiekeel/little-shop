@@ -11,6 +11,7 @@
      <%= item.description %><br/>
      <%= number_to_currency(item.price, :unit => "$") %><br/>
      <%= form_tag("/cart") do %>
+       <%= hidden_field_tag(:item_id, item.id) %>
        <%= label_tag(:quantity) %>
        <%= text_field_tag(:quantity, "#{@cart.contents[item.id.to_s]}", :size=>"2") %>
        <%= submit_tag("Update", :class => "btn btn-primary", method: :puts) %>
