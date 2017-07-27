@@ -3,6 +3,8 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Metamorphous');
+@import url('https://fonts.googleapis.com/css?family=Spectral');
 
 @font-face {
   font-family: "Aniron Regular";
@@ -17,12 +19,15 @@
 
 body {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    // background: url('../img/bg.jpg') no-repeat center center fixed;
+    background: url('http://paradiseintheworld.com/wp-content/uploads/2012/02/new-zealand-mountain.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    padding-top: 75px;
+    padding-top: 100px;
+    background-color: hsla(0,0%,100%,0.50);
+    background-blend-mode: overlay;
+    background-position: 0px 50px;
 }
 
 h1,
@@ -32,7 +37,7 @@ h4,
 h5,
 h6 {
     text-transform: uppercase;
-    font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Metamorphous", cursive, "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
 }
@@ -203,4 +208,24 @@ footer p {
         display: table;
         clear: both;
     }
+}
+
+@media only screen {
+    .small-item:nth-of-type(4n + 1) {
+        clear: both;
+    }
+}
+
+.footer {
+  background-color: hsla(0,0%,100%,0);
+  background-blend-mode: overlay;
+}
+
+.item-text{
+  font-family: 'Spectral', serif;
+}
+
+.normal-text {
+  font-family: "Metamorphous", cursive, "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 10pt;
 }
