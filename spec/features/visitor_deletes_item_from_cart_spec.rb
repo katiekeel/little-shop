@@ -21,7 +21,7 @@ RSpec.feature "Visitor deletes item from cart" do
     within(".item-#{item_1.id}") do
       click_button "Delete"
     end
-
+    save_and_open_page
     expect(current_path).to eq(cart_path)
     expect(page).to have_content("You have successfully removed #{item_1.title} from the cart.")
     expect(page).to have_link item_1.title, href: item_path(item_1)
