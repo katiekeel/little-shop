@@ -8,15 +8,50 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
-<%= render partial: "layouts/template" %>
 
-<body>
+  <body>
+<header>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Anduin</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Anduin</a></li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Items", items_path %></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/elven%20ware">Elven Ware</a></li>
+              <li><a href="/journeying">Journeying</a></li>
+              <li><a href="/home%20and%20hearth">Home & Hearth</a></li>
+              <li><a href="/pure%20evil">Pure Evil</a></li>
+            </ul>
+          </li>
+          <li class="cart"><%= link_to "cart" do %>
+            <span class="glyphicon glyphicon-shopping-cart"></span> Cart
+          <% end %></li>
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
   <% flash.each do |key, value| %>
   <div class="alert alert-<%= key %>"><h3 class="flash_header"> <%= value %> </h3></div>
   <% end %>
-  
-  <%= yield %>
-</body>
+    <%= yield %>
+  </body>
+
 
 <footer>
   <div class="container">

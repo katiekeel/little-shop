@@ -10,6 +10,10 @@ class Cart
     contents[id.to_s] = (contents[id.to_s] || 0) + 1
   end
 
+  def delete_item(id)
+    contents.delete_if {|key, value| key == id.to_s}
+  end
+
   def total_price
     contents.map do |key, value|
       Item.where(id: key).sum(:price) * value

@@ -1,5 +1,6 @@
 <div class="container text-center">
-  <h4>Cart Total: <%= number_to_currency(@cart.total_price, :unit => "$") %></h4>
+  <br/></br/><h4 class="page-titles">Cart Total: <br/></h4>
+  <h2 class="page-titles"><%= number_to_currency(@cart.total_price, :unit => "$") %></h2><br/><br/>
 
   <div class="row">
 
@@ -10,10 +11,10 @@
      <%= item.description %><br/>
      <%= number_to_currency(item.price, :unit => "$") %><br/>
      Quantity: <%= @cart.contents[item.id.to_s] %><br/><br/>
-     Item Total: <%= number_to_currency((item.price * @cart.contents[item.id.to_s]), :unit => "$") %>
-     <%= button_to "Delete", cart_path(item_id: item.id), method: :delete, class: "btn btn-default"  %>
+     Item Total: <%= number_to_currency((item.price * @cart.contents[item.id.to_s]), :unit => "$") %><br/><br/>
+     <%= button_to "Delete", cart_delete_path(item_id: item.id), class: "btn btn-danger"  %><br/><br/><br/>
   </div>
   <% end %>
 
-    </div>
   </div>
+</div>
