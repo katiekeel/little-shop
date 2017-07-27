@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :items, only: [:index]
+  resources :items, only: [:index, :show]
 
   resources :carts, only: [:create]
 
+  post '/cart', to: "carts#update"
   delete '/cart', to: "carts#destroy"
 
   get '/cart', to: 'carts#index'
