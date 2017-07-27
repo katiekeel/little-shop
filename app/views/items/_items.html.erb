@@ -5,7 +5,7 @@
       <% @items.each do |item| %>
       <div class="col-md-3 col-sm-6 col-lg-3 item-<%= item.id %>">
         <img class="img-responsive item-images img-thumbnail" src="<%= item.image_path %>" alt="item image"><br/>
-        <%= item.title %><br/>
+        <h5><%= item.title %></h5>
         <%= item.description %><br/>
         <%= number_to_currency(item.price, :unit => "$") %><br/><br/>
         <%= button_to "Add to Cart", carts_path(item_id: item.id), class: "btn btn-danger" %><br/><br/><br/>
