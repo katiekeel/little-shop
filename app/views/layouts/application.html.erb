@@ -47,7 +47,7 @@
   </nav>
 </header>
   <% flash.each do |key, value| %>
-  <div class="alert alert-<%= key %>"><h3 class="flash_header"> <%= value %> </h3></div>
+  <div class="alert alert-<%= key %> alert-success"><h3 class="flash_header"> <%= value %> </h3></div>
   <% end %>
     <%= yield %>
   </body>

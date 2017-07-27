@@ -12,7 +12,7 @@
      <%= number_to_currency(item.price, :unit => "$") %><br/>
      Quantity: <%= @cart.contents[item.id.to_s] %><br/><br/>
      Item Total: <%= number_to_currency((item.price * @cart.contents[item.id.to_s]), :unit => "$") %><br/><br/>
-     <%= button_to "Delete", cart_delete_path(item_id: item.id), class: "btn btn-danger"  %><br/><br/><br/>
+     <%= button_to "Delete", cart_path(item_id: item.id), method: :delete, class: "btn btn-danger"  %><br/><br/><br/>
   </div>
   <% end %>
 
