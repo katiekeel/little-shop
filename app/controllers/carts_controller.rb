@@ -29,9 +29,7 @@ class CartsController < ApplicationController
     item = Item.find(params[:item_id])
     @cart.delete_item(item.id)
     session[:cart] = @cart.contents
-
-    flash[:notice] = "You have successfully removed #{item.title} from the cart."
+    flash[:notice] = "You have successfully removed <a href='/items/#{item.id}'>#{item.title}</a> from the cart."
     redirect_to cart_path
   end
-
 end

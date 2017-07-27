@@ -37,7 +37,7 @@
               <li><a href="/pure%20evil">Pure Evil</a></li>
             </ul>
           </li>
-          <li class="cart"><%= link_to "cart" do %>
+          <li class="cart"><%= link_to cart_path do %>
             <span class="glyphicon glyphicon-shopping-cart"></span> Cart
           <% end %></li>
           <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -47,7 +47,7 @@
   </nav>
 </header>
   <% flash.each do |key, value| %>
-  <div class="alert alert-<%= key %> alert-success"><h3 class="flash_header"> <%= value %> </h3></div>
+  <div class="alert alert-<%= key %> alert-success"><h3 class="flash_header"><%= sanitize(value) %> </h3></div>
   <% end %>
     <%= yield %>
   </body>
