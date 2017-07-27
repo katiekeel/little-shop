@@ -1,5 +1,7 @@
 RSpec.feature "User can create new account" do
   scenario "user createth new account" do
+    create_list(:item, 3)
+
     visit(root_path)
 
     expect(page).to have_link("Login")
@@ -10,8 +12,9 @@ RSpec.feature "User can create new account" do
 
     click_link("Create Account")
 
-    fill_in("user[username]"), with: "Bilbo"
-    fill_in("user[password]"), with: "Bilbo123"
+    fill_in "user[username]", with: "Bilbo"
+    fill_in "user[password]", with: "Bilbo123"
+    fill_in "user[password_confirmation]", with: "Bilbo123"
 
     click_button("Signeth Thou Up")
 
