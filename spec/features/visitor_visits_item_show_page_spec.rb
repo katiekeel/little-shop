@@ -1,5 +1,5 @@
-RSpec.feature "when a visitor visits items index" do
-  scenario "they can see all items" do
+RSpec.feature "when a visitor visits individual item page" do
+  scenario "they see only that item" do
     item_1, item_2 = create_list(:item, 2)
 
     visit item_path(item_2)
