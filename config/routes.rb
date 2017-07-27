@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get '/cart', to: 'carts#index'
 
+  get '/dashboard', to: 'user#show'
+
   get '/about', to: 'categories#about'
   get '/:category_title', to: 'categories#show'
   root to: 'welcome#index'

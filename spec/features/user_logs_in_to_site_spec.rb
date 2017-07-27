@@ -23,7 +23,7 @@ RSpec.feature "User logs in to site" do
     fill_in "session_password", with: user.password
 
     # And I submit my information
-    click_button("Login")
+    click_button("Log In")
 
     # Then my current page should be "/dashboard"
     expect(current_path).to eq("/dashboard")
