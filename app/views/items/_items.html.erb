@@ -3,12 +3,14 @@
 
 
       <% @items.each do |item| %>
-      <div class="col-md-3 col-sm-6 col-lg-3 item-<%= item.id %>">
+      <div class="col-md-3 col-sm-6 col-lg-3 item-<%= item.id %> small-item">
         <img class="img-responsive item-images img-thumbnail" src="<%= item.image_path %>" alt="item image"><br/>
-        <h5><%= item.title %></h5>
-        <%= item.description %><br/>
-        <%= number_to_currency(item.price, :unit => "$") %><br/><br/>
-        <%= button_to "Add to Cart", carts_path(item_id: item.id), class: "btn btn-danger" %><br/><br/><br/>
+        <span class="item-text">
+          <strong><h4><%= item.title %></h4></strong>
+          <p class="normal-text"><%= item.description %></p>
+          <h5><%= number_to_currency(item.price, :unit => "$") %></h5><br/>
+        </span>
+        <%= button_to "Add to Cart", carts_path(item_id: item.id), class: "btn btn-danger" %><br/><br/>
       </div>
       <% end %>
 
