@@ -12,7 +12,7 @@
           <p class="normal-text"><strong><%= item.description %></strong></p>
           <h5><%= number_to_currency(item.price, :unit => "$") %></h5><br/>
         </span>
-        <%= button_to "Add to Cart", carts_path(item_id: item.id), class: "btn btn-danger" %><br/><br/>
+        <%= button_to "Add to Cart", carts_path(item_id: item.id), class: "btn btn-danger normal-text" %><br/><br/>
       </div>
       <% end %>
   </div>
