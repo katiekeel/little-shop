@@ -1,0 +1,7 @@
+<h1><%= current_user.username %>'s Orders</h1>
+
+<ul>
+  <%= @orders.each do |order| %>
+  <li>order-<%= order.id %></li>
+  <% end %>
+</ul>
