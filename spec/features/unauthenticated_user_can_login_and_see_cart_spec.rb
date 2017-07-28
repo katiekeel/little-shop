@@ -16,7 +16,7 @@ RSpec.feature "visitor can add items to cart and upon login" do
     expect(current_path).to eq(cart_path)
     expect(page).to have_content(item_1.title)
     expect(page).to have_content(item_2.title)
-    expect(page).to_not have_content("Checkout")
+    expect(page).to_not have_link("Checkout")
 
     click_on "Login or Create Account to Checkout"
 
