@@ -46,7 +46,7 @@
             <span class="glyphicon glyphicon-shopping-cart"></span> Cart
           <% end %></li>
           <% if current_user %>
-          <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+          <li> <%= link_to "Logout", logout_path, method: :delete %></li>
           <% else %>
           <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
           <% end %>

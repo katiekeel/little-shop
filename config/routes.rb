@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
 
+  delete '/logout', to: 'sessions#destroy'
+
   post '/cart', to: "carts#update"
   delete '/cart', to: "carts#destroy"
 
