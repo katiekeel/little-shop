@@ -1,12 +1,16 @@
 RSpec.feature "a user can see their past orders" do
   scenario "when they visit /orders" do
-    #Background: An existing user that has multiple orders
+    user = user(:create)
+    order_1 = order(:create, user_id: user.id)
+    order_2 = order(:create, user_id: user.id)
+    order_3 = order(:create, user_id: user.id)
 
-    #As an Authenticated User
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-    #When I visit "/orders"
+    visit orders_path
 
-    #Then I should see all orders belonging to me and no other orders
-
+    expect(page).to have_content("order-#{order_1.id}")
+    expect(page).to have_content("order-#{order_2.id}")
+    expect(page).to have_content("order-#{order_3.id}")
   end
 end
