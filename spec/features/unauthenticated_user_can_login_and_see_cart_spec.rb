@@ -17,8 +17,9 @@ RSpec.feature "visitor can add items to cart and upon login" do
     expect(page).to have_content(item_1.title)
     expect(page).to have_content(item_2.title)
     expect(page).to_not have_link("Checkout")
+    expect(page).to have_link("Login")
 
-    click_on "Login or Create Account to Checkout"
+    click_on "Create Account"
 
     fill_in "user[username]", with: "Bilbo"
     fill_in "user[password]", with: "Bilbo123"
@@ -30,6 +31,5 @@ RSpec.feature "visitor can add items to cart and upon login" do
 
     expect(page).to have_content(item_1.title)
     expect(page).to have_content(item_2.title)
-
   end
 end
