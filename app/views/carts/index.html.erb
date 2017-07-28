@@ -2,6 +2,10 @@
   <br/></br/><h4 class="page-titles">Cart Total: <br/></h4>
   <h2 class="page-titles"><%= number_to_currency(@cart.total_price, :unit => "$") %></h2><br/><br/>
 
+  <% unless current_user %>
+<h3><%=link_to "Login", login_path%>, or <%= link_to "Create Account", new_user_path %> to Checkout</h3>
+  <% end %>
+
   <div class="row">
 
   <% @items.each do |item| %>
