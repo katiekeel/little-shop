@@ -31,5 +31,7 @@ RSpec.feature "visitor can add items to cart and upon login" do
 
     expect(page).to have_content(item_1.title)
     expect(page).to have_content(item_2.title)
+    expect(page).to_not have_link("Login")
+    expect(page).to_not have_content("Create Account")
   end
 end
