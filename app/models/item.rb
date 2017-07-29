@@ -4,4 +4,6 @@ class Item < ApplicationRecord
   has_many :categories, through: :category_items
   has_many :item_orders
   has_many :orders, through: :item_orders
+
+  enum status: ["active", "retired"]
 end
