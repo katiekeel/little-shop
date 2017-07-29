@@ -1,9 +1,19 @@
-<h3>Order-<%= @order.id %> </h3>
+<div class="container-fluid text-center">
+
+<h3>Order-<%= @order.id %> </h3><br>
+
 <% @order.item_orders.each do |item_order| %>
-  <%= link_to item_order.item.title, item_path(item_order.item) %>
-  <p>Quantity: <%= item_order.quantity %></p>
-  <p>Subtotal: <%= item_order.quantity * item_order.item.price %></p>
+  <span class = "item-details"><%= link_to item_order.item.title, item_path(item_order.item) %></span>
+  <span class = "item-details">Quantity: <%= item_order.quantity %></span>
+  <span class = "item-details">Subtotal: <%= number_to_currency(item_order.subtotal, :unit => "$") %></span><br>
+<% end %><br>
+
+<p>Status: <%= @order.status %></p>
+<p>Total Price: <%= number_to_currency(@order.total_price, :unit => "$") %></p>
+<p>Order Submission Date/Time: <%= @order.created_at.to_formatted_s(:long) %></p>
+<% if @order.status == ("completed" || "cancelled") %>
+  <p><%= "#{@order.status.capitalize} Date/Time: #{@order.updated_at.to_formatted_s(:long) }" %></p>
 <% end %>
-<p>status: <%= @order.status %></p>
-<p>Total Price: <%= @order.total_price %></p>
-<p><%= "#{@order.status} Date: #{@order.updated_at}" %></p>
+
+</div>
+</div>
