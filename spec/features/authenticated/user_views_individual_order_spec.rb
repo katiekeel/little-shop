@@ -15,12 +15,12 @@ RSpec.feature "User views individual order page" do
     expect(page).to have_link(item_2.title)
     expect(page).to have_content("Quantity: 3")
     expect(page).to have_content("Quantity: 2")
-    expect(page).to have_content("Subtotal: #{3 * item_1.price}")
-    expect(page).to have_content("Subtotal: #{2 * item_2.price}")
-    expect(page).to have_content("status: completed")
-    expect(page).to have_content("Total Price: #{(3 * item_1.price) + (2 * item_2.price)}")
-    expect(page).to have_content(order_1.created_at)
-    expect(page).to have_content(order_1.updated_at)
+    expect(page).to have_content("Subtotal: $#{3 * item_1.price}0")
+    expect(page).to have_content("Subtotal: $#{2 * item_2.price}0")
+    expect(page).to have_content("Status: completed")
+    expect(page).to have_content("Total Price: $#{(3 * item_1.price) + (2 * item_2.price)}0")
+    expect(page).to have_content(order_1.created_at.to_formatted_s(:long))
+    expect(page).to have_content(order_1.updated_at.to_formatted_s(:long))
   end
 
   scenario "do not see updated_at date when status is cancelled or completed" do
@@ -35,8 +35,8 @@ RSpec.feature "User views individual order page" do
     expect(page).to have_content("order-#{order_1.id}")
     click_on "order-#{order_1.id}"
 
-    expect(page).to have_content("status: paid")
-    expect(page).to have_content(order_1.created_at)
-    expect(page).to_not have_content(order_1.updated_at)
+    expect(page).to have_content("Status: paid")
+    expect(page).to have_content(order_1.created_at.to_formatted_s(:long))
+    expect(page).to_not have_content(order_1.updated_at.to_formatted_s(:long))
   end
 end

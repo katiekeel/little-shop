@@ -18,7 +18,7 @@
 
 
 body {
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Metamorphous", cursive, "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
     background: url('http://paradiseintheworld.com/wp-content/uploads/2012/02/new-zealand-mountain.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -239,4 +239,10 @@ footer p {
 .normal-text {
   font-family: "Metamorphous", cursive, "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 10pt;
+}
+
+.item-details {
+  width: 200px;
+  display: inline-block;
+  text-align: left;
 }
