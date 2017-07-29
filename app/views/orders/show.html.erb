@@ -2,7 +2,7 @@
 <% @order.item_orders.each do |item_order| %>
   <%= link_to item_order.item.title, item_path(item_order.item) %>
   <p>Quantity: <%= item_order.quantity %></p>
-  <p>Subtotal: <%= item_order.quantity * item_order.item.price %></p>
+  <p>Subtotal: <%= item_order.subtotal %></p>
 <% end %>
 <p>status: <%= @order.status %></p>
 <p>Total Price: <%= @order.total_price %></p>
