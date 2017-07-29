@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe ItemOrder, type: :model do
+  context "Validations" do
+    it { should validate_presence_of(:quantity) }
+  end
+
   context "relationships" do
     it {should belong_to(:order) }
     it {should belong_to(:item) }
