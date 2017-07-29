@@ -271,3 +271,9 @@ footer p {
   color: #999999;
   padding-right: 25px;
 }
+
+
+.opaque {
+  background-color: hsla(0,0%,100%,0.5);
+  background-blend-mode: overlay;
+}
