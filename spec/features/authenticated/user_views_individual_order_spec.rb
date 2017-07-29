@@ -24,6 +24,19 @@ RSpec.feature "User views individual order page" do
   end
 
   scenario "do not see updated_at date when status is cancelled or completed" do
+    item_1, item_2 = create_list(:item, 2)
+    user = create(:user)
+    order_1 = create(:order, user_id: user.id, status: 1, created_at: 1.week.ago)
+    create(:item_order, item: item_1, order: order_1, quantity: 3)
+    create(:item_order, item: item_2, order: order_1, quantity: 2)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
+    visit orders_path
+    expect(page).to have_content("order-#{order_1.id}")
+    click_on "order-#{order_1.id}"
+
+    expect(page).to have_content("status: paid")
+    expect(page).to have_content(order_1.created_at)
+    expect(page).to_not have_content(order_1.updated_at)
   end
 end

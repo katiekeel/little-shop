@@ -7,4 +7,6 @@
 <p>status: <%= @order.status %></p>
 <p>Total Price: <%= @order.total_price %></p>
 <p>Order Submission Date/Time: <%= @order.created_at %></p>
-<p><%= "#{@order.status} Date/Time: #{@order.updated_at}" %></p>
+<% if @order.status == ("completed" || "cancelled") %>
+  <p><%= "#{@order.status} Date/Time: #{@order.updated_at}" %></p>
+<% end %>
