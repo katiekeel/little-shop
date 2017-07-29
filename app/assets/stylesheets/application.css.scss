@@ -28,6 +28,10 @@ body {
     background-color: hsla(0,0%,100%,0.50);
     background-blend-mode: overlay;
     background-position: 0px 50px;
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
 }
 
 h1,
@@ -124,6 +128,13 @@ hr {
 footer {
     background: #fff;
     background: rgba(255,255,255,0.9);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
+    height: 10px;
 }
 
 footer p {
@@ -230,6 +241,13 @@ footer p {
 .footer {
   background-color: hsla(0,0%,100%,0);
   background-blend-mode: overlay;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  padding-top: 15px;
+  text-align: center;
 }
 
 .item-text{
