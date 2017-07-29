@@ -2,10 +2,25 @@
 
 <h3>Order-<%= @order.id %> </h3><br>
 
-<% @order.item_orders.each do |item_order| %>
-  <span class = "item-details"><%= link_to item_order.item.title, item_path(item_order.item) %></span>
-  <span class = "item-details">Quantity: <%= item_order.quantity %></span>
-  <span class = "item-details">Subtotal: <%= number_to_currency(item_order.subtotal, :unit => "$") %></span><br>
+<div class="row">
+  <div class="col-md-12">
+
+    <table class="table">
+
+      <thead>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
+      </thead>
+
+      <tbody>
+        <% @order.item_orders.each do |item_order| %>
+        <tr>
+          <th scope="row"><%= link_to item_order.item.title, item_path(item_order.item) %></th>
+            <td><%= item_order.quantity %></td>
+            <td><%= number_to_currency(item_order.subtotal, :unit => "$") %></td>
+        </tr>
+      </tbody>
 <% end %><br>
 
 <p>Status: <%= @order.status %></p>
@@ -17,31 +32,6 @@
 
 </div>
 </div>
-
-<div class="row">
-  <div class="col-md-12">
-
-    <table class="table">
-
-      <thead>
-        <!-- First column name can be empty if row name is explanatory -->
-        <th></th>
-        <th>Column name</th>
-        <th>2nd Column Name</th>
-      </thead>
-
-      <tbody>
-        <tr>
-          <th scope="row">Row Name</th>
-            <td>2nd Row 1st Column Content</td>
-            <td>2nd Row 2nd Column Content</td>
-        </tr>
-        <tr>
-          <th scope="row">Second Row Name</th>
-            <td>2nd Row 1st Column Content</td>
-            <td>2nd Row 2nd Column Content</td>
-        </tr>
-      </tbody>
 
     </table>
   </div>
