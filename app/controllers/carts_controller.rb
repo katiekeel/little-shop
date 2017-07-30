@@ -25,7 +25,11 @@ class CartsController < ApplicationController
 
   def update
     item = Item.find(params[:item_id])
-    @cart.update_item(item.id, params[:quantity])
+    if params[:quantity] == "0"
+      @cart.delete_item(item.id)
+    else
+      @cart.update_item(item.id, params[:quantity])
+    end
     session[:cart] = @cart.contents
 
     flash[:notice] = "You now have #{pluralize(session[:cart][item.id.to_s], item.title)}."
