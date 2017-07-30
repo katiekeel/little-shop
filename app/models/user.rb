@@ -6,7 +6,7 @@ class User < ApplicationRecord
   validates_presence_of :username
   validates_uniqueness_of :username
 
-  has_many :orders
+  has_many :orders, dependent: :destroy
 
   def most_ordered_item
     orders = Order.where(user: self).pluck(:id)
