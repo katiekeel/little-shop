@@ -13,7 +13,11 @@ describe "User is not logged in and" do
     expect(page).to have_content "Login, or Create Account to Checkout"
 
     # I cannot view the administrator screens or use administrator functionality.
-
     # I cannot make myself an administrator.
+
+    visit '/admin'
+
+    expect(page).to have_button "Log In"
+    expect(page).to_not have_content "Admin Dashboard"
   end
 end

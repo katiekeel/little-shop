@@ -25,5 +25,9 @@ describe "User is logged in and" do
     # I cannot view the administrator screens or use admin functionality
     # I cannot make myself an admin
 
+    visit '/admin'
+
+    expect(page).to have_button "Log In"
+    expect(page).to_not have_content "Admin Dashboard"
   end
 end
