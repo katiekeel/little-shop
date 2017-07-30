@@ -16,6 +16,31 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = current_user
+  end
+
+  def edit
+    @user = current_user
+  end
+
+  def update
+    @user = current_user
+    @user.update(user_params)
+    if @user.save
+      flash[:notice] = "Thine information has been updated!"
+      redirect_to dashboard_path
+    else
+      flash[:notice] = "Please enter thine information correctly."
+      render :edit
+    end
+  end
+
+  def destroy
+    user = current_user
+    user.destroy
+    session.clear
+    flash[:notice] = "Account destroyed, my lord."
+    redirect_to logout_path
   end
 
   private

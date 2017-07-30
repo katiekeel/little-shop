@@ -7,6 +7,10 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:index, :show, :create]
 
+  get '/edit_account', to: 'users#edit'
+  patch '/update_account', to: 'users#update'
+  delete '/delete_account', to: 'users#destroy'
+
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
 

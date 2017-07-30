@@ -288,3 +288,24 @@ footer p {
   width: 750px;
   margin: 0 auto;
 }
+
+.tabpanel, .nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+     zoom:1; /* hasLayout ie7 trigger */
+}
+
+.nav-tabs, .nav-pills {
+    text-align:center;
+    margin-top: 25px;
+    padding-top: 10px;
+}
+
+#tabs {
+  padding-top: 25px;
+}
+
+.tabpanel {
+  width: 625px;
+}

@@ -13,7 +13,7 @@ RSpec.feature "User can log out of account" do
     fill_in "session_username", with: user.username
     fill_in "session_password", with: user.password
 
-    click_button("Log In")
+    click_button("Loggeth Thou In")
 
     expect(page).to_not have_content("Login")
 
