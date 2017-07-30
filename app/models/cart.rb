@@ -16,6 +16,10 @@ class Cart
     end.sum
   end
 
+  def item_subtotal(item)
+    item.price * self.contents[item.id.to_s]
+  end
+
   def delete_item(id)
     contents.delete_if {|key, value| key == id.to_s}
   end

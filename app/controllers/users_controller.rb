@@ -10,6 +10,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to dashboard_path
     else
+      flash[:notice] = "Username doth taken or passwordeth no valid, please retryith"
       render :new
     end
   end
