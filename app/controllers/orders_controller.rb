@@ -1,6 +1,12 @@
 class OrdersController < ApplicationController
   before_action :find_order, only: [:show]
 
+  def create
+    byebug
+
+    redirect_to orders_path
+  end
+
   def index
     @orders = current_user.orders
   end
@@ -8,6 +14,8 @@ class OrdersController < ApplicationController
   def show
 
   end
+
+
 
   private
 
