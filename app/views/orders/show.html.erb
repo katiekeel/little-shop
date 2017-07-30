@@ -27,7 +27,7 @@
         <tr align="right">
           <td></td>
           <td></td>
-          <td>Status: <%= @order.status.capitalize %></td>
+          <td>Status: <%= @order.status.capitalize if @order.status? %></td>
         </tr>
 
         <tr align="right">
