@@ -34,6 +34,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    user = current_user
+    user.destroy
+    flash[:notice] = "Account destroyed, my lord."
+    redirect_to logout_path
+  end
+
   private
 
   def user_params

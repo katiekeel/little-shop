@@ -20,7 +20,7 @@
   <div class="tab-pane" id="profile" role="tabpanel">
     <p>Username: <%= @user.username %></p>
     <p>Anduin Member Since: <%= @user.created_at.to_formatted_s(:long) %></p>
-    <p><%= link_to "Edit Account", '/edit_account' %></p>
+    <p><%= link_to "Edit Thine Account", '/edit_account' %></p>
   </div>
 
   <div class="tab-pane" id="orders" role="tabpanel">
@@ -28,7 +28,7 @@
   </div>
 
   <div class="tab-pane" id="delete" role="tabpanel">
-
+    <p><%= link_to "Delete Thine Account", '/delete_account', method: :delete %></p>
   </div>
 </div>
 
