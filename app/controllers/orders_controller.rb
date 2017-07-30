@@ -7,6 +7,7 @@ class OrdersController < ApplicationController
       @order.item_orders.new(item_id: item.to_i, quantity: qty)
     end
     @order.save
+    flash[:message] = "Order was successfully placed"
     redirect_to orders_path
   end
 

@@ -40,6 +40,6 @@ RSpec.feature "user can checkout" do
 
     expect(current_path).to eq(orders_path)
     expect(page).to have_content("Order was successfully placed")
-    exepct(pave).to have_content("order-#{current_user.orders.last.id}")
+    expect(page).to have_content("order-#{user.orders.last.id}")
   end
 end
