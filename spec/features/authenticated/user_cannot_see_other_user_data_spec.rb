@@ -4,20 +4,26 @@ describe "User is logged in and" do
     user_2 = create(:user)
 
     order = create(:order, user: user)
+    user.orders << order
     order_2 = create(:order, user: user_2)
+    user_2.orders << order_2
 
+    # As an Authenticated User
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
+    # I cannot view another user's private data (current or past orders, etc)
     visit '/orders'
 
-    expect(page).to have_content("Order 1")
-    expect(page).to_not have_content("Order 2")
+    expect(page).to have_link("order-1")
+    expect(page).to_not have_link("order-2")
+
+    visit '/orders/2'
+
+    expect(current_path).to eq "/login"
+    expect(page).to have_content "Please login appropriately to view that order."
+
+    # I cannot view the administrator screens or use admin functionality
+    # I cannot make myself an admin
+
   end
 end
-# As an Authenticated User
-#
-# I cannot view another user's private data (current or past orders, etc)
-#
-# I cannot view the administrator screens or use admin functionality
-#
-# I cannot make myself an admin
