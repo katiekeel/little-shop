@@ -1,2 +1,36 @@
+<div class="container text-center tabs">
+<h1> <%= @user.username %>'s Hobbit Hole</h1>
 
-<h1> <%= current_user.username %>'s Hobbit Hole</h1>
+<div class="tabpanel">
+
+<ul class="nav nav-pills opaque" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="pill" href="#profile" role="pill">Profile</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="pill" href="#orders" role="pill">Orders</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" data-toggle="pill" href="#delete" role="pill">Delete Account</a>
+  </li>
+</ul>
+
+<div class="tab-content opaque" id="tabs">
+
+  <div class="tab-pane" id="profile" role="tabpanel">
+    <p>Username: <%= @user.username %></p>
+    <p>Anduin Member Since: <%= @user.created_at.to_formatted_s(:long) %></p>
+    <p><%= link_to "Edit Account", '/edit_account' %></p>
+  </div>
+
+  <div class="tab-pane" id="orders" role="tabpanel">
+
+  </div>
+
+  <div class="tab-pane" id="delete" role="tabpanel">
+
+  </div>
+</div>
+
+</div>
+</div>

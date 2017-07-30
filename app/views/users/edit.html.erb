@@ -1,0 +1,16 @@
+<div class="text-center">
+<h1>Edit Thine Account</h1><br/><br/>
+
+<%= form_for @user, :url => '/update_account' do |f| %>
+  <%= f.label :username %><br/>
+  <%= f.text_field :username %><br/><br/>
+
+  <%= f.label :password %><br/>
+  <%= f.password_field :password %><br/><br/>
+
+  <%= f.label :password_confirmation %><br/>
+  <%= f.password_field :password_confirmation %><br/><br/>
+
+  <%= f.submit "Changeth Thine Account" %>
+<% end %>
+</div>
