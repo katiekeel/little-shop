@@ -8,4 +8,5 @@ class Order < ApplicationRecord
   def total_price
     ItemOrder.joins(:item).where("order_id = ?", self.id).sum("price * quantity")
   end
+
 end
