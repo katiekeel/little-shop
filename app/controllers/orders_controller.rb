@@ -3,9 +3,7 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(user: current_user)
-    @cart.contents.each do |item, qty|
-      @order.item_orders.new(item_id: item.to_i, quantity: qty)
-    end
+    create_item_orders
     @order.save
     flash[:message] = "Order was successfully placed"
     redirect_to orders_path
@@ -25,5 +23,11 @@ class OrdersController < ApplicationController
 
   def find_order
     @order = Order.find(params[:id])
+  end
+
+  def create_item_orders
+    @cart.contents.each do |item, qty|
+      @order.item_orders.new(item_id: item.to_i, quantity: qty)
+    end
   end
 end

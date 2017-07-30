@@ -7,4 +7,5 @@ class ItemOrder < ApplicationRecord
   def subtotal
     quantity * item.price
   end
+
 end

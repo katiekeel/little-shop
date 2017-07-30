@@ -42,4 +42,27 @@ RSpec.feature "user can checkout" do
     expect(page).to have_content("Order was successfully placed")
     expect(page).to have_content("order-#{user.orders.last.id}")
   end
+
+  scenario "'checkout' should not display with 0 items in cart'" do
+    user = create(:user)
+
+    visit items_path
+
+    within("nav") do
+      click_link("Login")
+    end
+
+    fill_in "session_username", with: user.username
+    fill_in "session_password", with: user.password
+    click_button("Log In")
+
+    expect(current_path).to eq("/dashboard")
+
+    expect(page).to have_content("Logged in as #{user.username}")
+    expect(page).to have_content user.username
+
+    click_link "Cart"
+
+    expect(page).to_not have_content("Checkout")
+  end
 end
