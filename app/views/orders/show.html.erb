@@ -1,19 +1,51 @@
 <div class="container-fluid text-center">
+<h3>Order #<%= @order.id %> </h3><br>
 
-<h3>Order-<%= @order.id %> </h3><br>
+<div class="row">
 
-<% @order.item_orders.each do |item_order| %>
-  <span class = "item-details"><%= link_to item_order.item.title, item_path(item_order.item) %></span>
-  <span class = "item-details">Quantity: <%= item_order.quantity %></span>
-  <span class = "item-details">Subtotal: <%= number_to_currency(item_order.subtotal, :unit => "$") %></span><br>
-<% end %><br>
+  <div class="col-md-12">
 
-<p>Status: <%= @order.status %></p>
-<p>Total Price: <%= number_to_currency(@order.total_price, :unit => "$") %></p>
-<p>Order Submission Date/Time: <%= @order.created_at.to_formatted_s(:long) %></p>
-<% if @order.status == ("completed" || "cancelled") %>
-  <p><%= "#{@order.status.capitalize} Date/Time: #{@order.updated_at.to_formatted_s(:long) }" %></p>
-<% end %>
+  <div class="opaque orders-table-width table-responsive">
 
-</div>
+    <table class="table table-condensed">
+
+      <thead>
+        <th>Item</th>
+        <th class="text-center">Quantity</th>
+        <th class="text-center">Subtotal</th>
+      </thead>
+
+      <tbody>
+        <% @order.item_orders.each do |item_order| %>
+        <tr>
+          <th scope="row"><%= link_to item_order.item.title, item_path(item_order.item) %></th>
+            <td class="text-center"><%= item_order.quantity %></td>
+            <td class="text-center"><%= number_to_currency(item_order.subtotal, :unit => "$") %></td>
+        </tr>
+        <% end %>
+
+        <% if @order.status == ("completed" || "cancelled") %>
+          <tr align="right">
+            <td></td>
+            <td></td>
+            <td>Status: <%= @order.status.capitalize %></td>
+          </tr>
+        <% end %>
+
+        <tr align="right">
+          <td></td>
+          <td></td>
+          <td>Submitted at: <%= @order.created_at.to_formatted_s(:long) %></td>
+        </tr>
+
+        <tr align="right">
+          <td></td>
+          <td></td>
+          <td><p>Total Price: <%= number_to_currency(@order.total_price, :unit => "$") %></p></td>
+        </tr>
+      </tbody>
+
+      </table>
+    </div>
+  </div>
 </div>

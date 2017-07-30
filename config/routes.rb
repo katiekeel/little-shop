@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
 
-  delete '/logout', to: 'sessions#destroy'
+  get '/logout', to: 'sessions#destroy'
 
   post '/cart', to: "carts#update"
   delete '/cart', to: "carts#destroy"
@@ -21,5 +21,6 @@ Rails.application.routes.draw do
 
   get '/about', to: 'categories#about'
   get '/:category_title', to: 'categories#show'
+
   root to: 'welcome#index'
 end

@@ -26,11 +26,6 @@
           <li class="active"><a href="#">Anduin</a></li>
 
         </ul>
-        <% if current_user %>
-        <ul class="nav navbar-nav navbar-left">
-          <li>Logged in as <%= current_user.username %></li>
-        </ul>
-        <% end %>
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "Items", items_path %></li>
           <li class="dropdown">
@@ -42,12 +37,28 @@
               <li><a href="/pure%20evil" class="normal-text">Pure Evil</a></li>
             </ul>
           </li>
+          <% if current_user %>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Logged in as <%= current_user.username %><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to cart_path do %>
+                <span class="glyphicon glyphicon-shopping-cart"></span> Cart
+                <% end %></li>
+              <li><%= link_to orders_path do %>
+                <span class="glyphicon glyphicon-credit-card"></span> Orders
+                <% end %></li>
+              <li><%= link_to dashboard_path do %>
+                <span class="glyphicon glyphicon-user"></span> Dashboard
+                <% end %></li>
+              <li><%= link_to logout_path do %>
+                <span class="glyphicon glyphicon-log-out"></span> Logout
+                <% end %></li>
+            </ul>
+          </li>
+          <% else %>
           <li class="cart"><%= link_to cart_path do %>
             <span class="glyphicon glyphicon-shopping-cart"></span> Cart
-          <% end %></li>
-          <% if current_user %>
-          <li> <%= link_to "Logout", logout_path, method: :delete %></li>
-          <% else %>
+            <% end %></li>
           <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
           <% end %>
         </ul>

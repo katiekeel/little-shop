@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :item_order do
     item
-    order 
+    order
     quantity 1
   end
 end
