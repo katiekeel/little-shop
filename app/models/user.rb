@@ -12,6 +12,7 @@ class User < ApplicationRecord
     orders = Order.where(user: self).pluck(:id)
     order_items = ItemOrder.where(order: orders).pluck(:item_id)
     items = Item.where(id: order_items).group(:title).count
-    item = Item.find(items.values.max)
+    item_name = items.key(items.values.max)
+    item = Item.find_by(title: item_name)
   end
 end

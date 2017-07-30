@@ -10,7 +10,7 @@ RSpec.feature "User can create new account" do
 
     expect(current_path).to eq(login_path)
 
-    click_link("Create Account")
+    click_link("Createth Thine Account")
 
     fill_in "user[username]", with: "Bilbo"
     fill_in "user[password]", with: "Bilbo123"

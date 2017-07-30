@@ -22,7 +22,7 @@ describe "User is logged in and" do
 
     visit '/admin'
 
-    expect(page).to have_button "Log In"
+    expect(page).to have_button "Loggeth Thou In"
     expect(page).to_not have_content "Admin Dashboard"
   end
 end
