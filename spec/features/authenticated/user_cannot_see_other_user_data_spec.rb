@@ -14,10 +14,10 @@ describe "User is logged in and" do
     # I cannot view another user's private data (current or past orders, etc)
     visit '/orders'
 
-    expect(page).to have_link("order-1")
-    expect(page).to_not have_link("order-2")
+    expect(page).to have_link("order-#{order.id}")
+    expect(page).to_not have_link("order-#{order_2.id}")
 
-    visit '/orders/2'
+    visit "/orders/#{order_2.id}"
 
     expect(current_path).to eq "/login"
     expect(page).to have_content "Please login appropriately to view that order."
