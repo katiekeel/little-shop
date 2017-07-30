@@ -34,8 +34,8 @@ RSpec.feature "User views individual order page" do
     visit orders_path
     expect(page).to have_content("order-#{order_1.id}")
     click_on "order-#{order_1.id}"
-
-    expect(page).to have_content("Status: paid")
+save_and_open_page
+    expect(page).to have_content("Status: Paid")
     expect(page).to have_content(order_1.created_at.to_formatted_s(:long))
     expect(page).to_not have_content(order_1.updated_at.to_formatted_s(:long))
   end
