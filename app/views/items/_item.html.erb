@@ -1,0 +1,12 @@
+
+      <img class="img-responsive item-images img-thumbnail" src="<%= item.image_path %>" alt="item image"><br/>
+      <span class="item-text">
+      <strong><h4><%= item.title %></h4></strong>
+      <p class="normal-text"><strong><%= item.description %></strong></p>
+      <h5><%= number_to_currency(item.price, :unit => "$") %></h5><br/>
+      </span>
+      <% if item.active? %>
+        <%= button_to "Add to Cart", carts_path(item_id: item.id), class: "btn btn-danger normal-text" %><br/><br/><br/>
+      <% elsif item.retired? %>
+        <h5>Item Retired</h5>
+      <% end %>
