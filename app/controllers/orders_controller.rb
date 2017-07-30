@@ -12,6 +12,9 @@ class OrdersController < ApplicationController
   private
 
   def find_order
-    @order = Order.find(params[:id])
+    @order = current_user.orders.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      flash[:notice] = "Please login appropriately to view that order."
+      redirect_to login_path
   end
 end
