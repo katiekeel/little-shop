@@ -19,7 +19,10 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'users#show'
 
+  get '/admin', to: 'sessions#new'
+
   get '/about', to: 'categories#about'
+
   get '/:category_title', to: 'categories#show'
 
   root to: 'welcome#index'

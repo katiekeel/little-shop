@@ -24,19 +24,31 @@
         </tr>
         <% end %>
 
-        <% if @order.status == ("completed" || "cancelled") %>
-          <tr align="right">
-            <td></td>
-            <td></td>
-            <td>Status: <%= @order.status.capitalize %></td>
-          </tr>
-        <% end %>
+        <tr align="right">
+          <td></td>
+          <td></td>
+          <td>Status: <%= @order.status.capitalize %></td>
+        </tr>
 
         <tr align="right">
           <td></td>
           <td></td>
           <td>Submitted at: <%= @order.created_at.to_formatted_s(:long) %></td>
         </tr>
+
+        <% if @order.status == "completed" %>
+          <tr align="right">
+            <td></td>
+            <td></td>
+            <td>Completed at: <%= @order.updated_at.to_formatted_s(:long) %></td>
+          </tr>
+        <% elsif @order.status == "cancelled" %>
+          <tr align="right">
+            <td></td>
+            <td></td>
+            <td>Canceled at: <%= @order.updated_at.to_formatted_s(:long) %></td>
+          </tr>
+        <% end %>
 
         <tr align="right">
           <td></td>

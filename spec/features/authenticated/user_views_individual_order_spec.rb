@@ -13,11 +13,11 @@ RSpec.feature "User views individual order page" do
 
     expect(page).to have_link(item_1.title)
     expect(page).to have_link(item_2.title)
-    expect(page).to have_content("Quantity: 3")
-    expect(page).to have_content("Quantity: 2")
-    expect(page).to have_content("Subtotal: $#{3 * item_1.price}0")
-    expect(page).to have_content("Subtotal: $#{2 * item_2.price}0")
-    expect(page).to have_content("Status: completed")
+    expect(page).to have_content(order_1.item_orders.first.quantity)
+    expect(page).to have_content(order_1.item_orders.second.quantity)
+    expect(page).to have_content(order_1.item_orders.first.subtotal)
+    expect(page).to have_content(order_1.item_orders.second.subtotal)
+    expect(page).to have_content("Status: Completed")
     expect(page).to have_content("Total Price: $#{(3 * item_1.price) + (2 * item_2.price)}0")
     expect(page).to have_content(order_1.created_at.to_formatted_s(:long))
     expect(page).to have_content(order_1.updated_at.to_formatted_s(:long))
@@ -34,7 +34,7 @@ RSpec.feature "User views individual order page" do
     visit orders_path
     expect(page).to have_content("order-#{order_1.id}")
     click_on "order-#{order_1.id}"
-save_and_open_page
+
     expect(page).to have_content("Status: Paid")
     expect(page).to have_content(order_1.created_at.to_formatted_s(:long))
     expect(page).to_not have_content(order_1.updated_at.to_formatted_s(:long))

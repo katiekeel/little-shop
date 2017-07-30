@@ -10,7 +10,11 @@ class OrdersController < ApplicationController
   end
 
   def index
-    @orders = current_user.orders
+    @orders = current_user.orders if current_user
+    if @orders.nil?
+      flash[:notice] = "Please log in to your account to view your order details."
+      redirect_to login_path
+    end
   end
 
   def show
@@ -22,7 +26,10 @@ class OrdersController < ApplicationController
   private
 
   def find_order
-    @order = Order.find(params[:id])
+    @order = current_user.orders.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      flash[:notice] = "Please login appropriately to view that order."
+      redirect_to login_path
   end
 
   def create_item_orders
