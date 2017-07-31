@@ -11,7 +11,8 @@ class SessionsController < ApplicationController
     elsif user.authenticate(params[:session][:password])
       flash[:notice].clear if flash[:notice]
       session[:user_id] = user.id
-      redirect_to dashboard_path
+      redirect_to dashboard_path if current_user.default?
+      redirect_to admin_dashboard_path if current_user.admin?
     else
       flash[:notice] = "The password thou hast provided doeth not match. Please endeavour once more or createth thine account."
       render :new
