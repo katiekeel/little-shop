@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     redirect_to login_path unless current_user
+    render file: "/public/404" if current_admin?
   end
 
   def edit

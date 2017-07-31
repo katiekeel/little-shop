@@ -21,18 +21,19 @@ RSpec.feature "Admin edits the user" do
     expect(page).to have_content("Logged in as Gandalf")
   end
 
+  scenario "Cannot modify any other users account" do
+    # As a logged in Admin
+    user = create(:user, role: "admin")
+    user2 = create(:user)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
+    # But I cannot modify any other user's account data
+    visit edit_account_path
+    expect(page).to_not have_content(user2.username)
 
+    visit dashboard_path
 
-
-
-
-
-
-  xscenario "Cannot modify any other users account" do
-
-        # As a logged in Admin
-        # But I cannot modify any other user's account data
+    expect(page).to have_content("You shall not pass")
   end
 
 
