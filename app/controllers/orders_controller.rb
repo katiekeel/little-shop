@@ -32,7 +32,7 @@ class OrdersController < ApplicationController
 
   def create_item_orders
     @cart.contents.each do |item, qty|
-      @order.item_orders.new(item_id: item.to_i, quantity: qty)
+    @order.item_orders.new(item_id: item.to_i, quantity: qty)
     end
   end
 end
