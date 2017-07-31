@@ -41,6 +41,11 @@ RSpec.feature "user can checkout" do
     expect(current_path).to eq(orders_path)
     expect(page).to have_content("Order was successfully placed")
     expect(page).to have_content("order-#{user.orders.last.id}")
+
+    click_link "Cart"
+
+    expect(page).to_not have_content(item_1.title)
+    expect(page).to_not have_content(item_2.title)
   end
 
   scenario "'checkout' should not display with 0 items in cart'" do
