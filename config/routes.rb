@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :show]
   resources :carts, only: [:create]
   resources :users, only: [:new, :create]
-  resources :orders, only: [:index, :show, :create]
+  resources :orders, only: [:index, :show, :create, :update]
 
   get '/edit_account', to: 'users#edit'
   patch '/update_account', to: 'users#update'

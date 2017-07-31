@@ -21,10 +21,21 @@ class OrdersController < ApplicationController
   def show
   end
 
+  def update
+    order = Order.find(params[:id])
+    if order.update(status: params[:new_status])
+      redirect_to admin_dashboard_path
+    else
+      flash[:notice] = "Weird shit happened"
+      redirect_to admin_dashboard_path
+    end
+  end
+
   private
 
   def find_order
-    @order = current_user.orders.find(params[:id])
+    @order = Order.find(params[:id]) if current_user.admin?
+    @order = current_user.orders.find(params[:id]) if current_user.default?
     rescue ActiveRecord::RecordNotFound
       flash[:notice] = "Please login appropriately to view that order."
       redirect_to login_path

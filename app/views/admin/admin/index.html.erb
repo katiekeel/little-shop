@@ -1,32 +1,102 @@
+<div class="container text-center">
 <h1>Admin Dashboard</h1>
-<div class="tabpanel">
+<p><%= link_to "Edit Thine Account", '/edit_account' %></p>
+<div class="admin-tabpanel tabpanel">
 
   <ul class="nav nav-pills opaque" role="tablist">
     <li class="nav-item">
-      <a class="nav-link active" data-toggle="pill" href="#profile" role="pill">Profile</a>
+      <a class="nav-link active" data-toggle="pill" href="#orders" role="pill">All Orders (<%= @orders.count %>)</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="pill" href="#orders" role="pill">Orders</a>
+      <a class="nav-link disabled" data-toggle="pill" href="#ordered-orders" role="pill">Ordered (<%= @orders.ordered.count %>)</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link disabled" data-toggle="pill" href="#delete" role="pill">Delete Account</a>
+      <a class="nav-link disabled" data-toggle="pill" href="#paid-orders" role="pill">Paid (<%= @orders.paid.count %>)</a>
     </li>
-  </ul>
-  
-  <div class="tab-content opaque" id="tabs">
+    <li class="nav-item">
+      <a class="nav-link disabled" data-toggle="pill" href="#cancelled-orders" role="pill">Cancelled (<%= @orders.cancelled.count %>)</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" data-toggle="pill" href="#completed-orders" role="pill">Completed (<%= @orders.completed.count %>)</a>
+    </li>
 
-    <div class="tab-pane" id="profile" role="tabpanel">
-      <p><%= link_to "Edit Thine Account", '/edit_account' %></p>
-    </div>
+  </ul>
+
+  <div class="tab-content opaque admin-tabpanel" id="tabs">
 
     <div class="tab-pane" id="orders" role="tabpanel">
+      <table class="table">
+
+      <tbody>
+        <% @orders.each do |order| %>
+        <tr>
+            <td><%= link_to "order-#{order.id}", order_path(order)%></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="tab-pane" id="ordered-orders" role="tabpanel">
+      <table class="table">
+
+      <tbody>
+        <% @orders.ordered.each do |order| %>
+        <tr>
+            <td><%= link_to "order-#{order.id}", order_path(order)%></td>
+            <td><%= button_to "Mark As Paid", order_path(id: order.id, new_status: "paid"), method: :patch, class: "btn btn-default" %></td>
+            <td><%= button_to "Cancel", order_path(id: order.id, new_status: "cancelled"), method: :patch, class: "btn btn-default" %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    </div>
+
+
+    <div class="tab-pane" id="paid-orders" role="tabpanel">
+      <table class="table">
+
+      <tbody>
+        <% @orders.paid.each do |order| %>
+        <tr>
+            <td><%= link_to "order-#{order.id}", order_path(order)%></td>
+            <td><%= button_to "Mark As Completed", order_path(id: order.id, new_status: "completed"), method: :patch, class: "btn btn-default" %></td>
+            <td><%= button_to "Cancel", order_path(id: order.id, new_status: "cancelled"), method: :patch, class: "btn btn-default" %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
 
     </div>
 
-    <div class="tab-pane" id="delete" role="tabpanel">
+    <div class="tab-pane" id="cancelled-orders" role="tabpanel">
+      <table class="table">
+
+      <tbody>
+        <% @orders.cancelled.each do |order| %>
+        <tr>
+            <td><%= link_to "order-#{order.id}", order_path(order)%></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    </div>
+
+    <div class="tab-pane" id="completed-orders" role="tabpanel">
+      <table class="table">
+
+      <tbody>
+        <% @orders.completed.each do |order| %>
+        <tr>
+          <td><%= link_to "order-#{order.id}", order_path(order)%></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
 
     </div>
   </div>
 
-
+</div>
 </div>
