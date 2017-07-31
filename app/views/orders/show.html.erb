@@ -1,8 +1,14 @@
 <div class="container-fluid text-center">
 <h3>Order #<%= @order.id %> </h3><br>
 
-<h4>Order for: <%= @order.user.full_name %></h4>
-<h4>Deliver to: <%= @order.user.address %></h4>
+<div class="col-md-12">
+  <div class="opaque orders-table-width table-responsive">
+    <% if current_admin? %>
+      <h4>Order for: <%= @order.user.full_name %></h4>
+      <h4>Deliver to: <%= @order.user.address %></h4>
+    <% end %>
+</div>
+  </div>
 
 <div class="row">
 
