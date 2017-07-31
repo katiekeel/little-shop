@@ -1,0 +1,37 @@
+<div class="container text-center tabs">
+<h1> <%= @user.username %>'s Hobbit Hole</h1>
+
+<div class="tabpanel">
+
+<ul class="nav nav-pills opaque" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="pill" href="#profile" role="pill">Profile</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="pill" href="#orders" role="pill">Orders</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" data-toggle="pill" href="#delete" role="pill">Delete Account</a>
+  </li>
+</ul>
+
+<div class="tab-content opaque" id="tabs">
+
+  <div class="tab-pane" id="profile" role="tabpanel">
+    <p>Username: <%= @user.username %></p>
+    <p>Anduin Member Since: <%= @user.created_at.to_formatted_s(:long) %></p>
+    <p><%= link_to "Edit Thine Account", '/edit_account' %></p>
+  </div>
+
+  <div class="tab-pane" id="orders" role="tabpanel">
+    <p><%= link_to "Orders Belonging to Thee", "/orders" %></p>
+    <p>Most Ordered Item: <%= link_to @user.most_ordered_item.title, item_path(@user.most_ordered_item) unless @user.most_ordered_item.nil? %></p>
+  </div>
+
+  <div class="tab-pane" id="delete" role="tabpanel">
+    <p><%= link_to "Delete Thine Account", delete_account_path, method: :delete %></p>
+  </div>
+</div>
+
+</div>
+</div>

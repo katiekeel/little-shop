@@ -1,0 +1,63 @@
+<div class="container-fluid text-center">
+<h3>Order #<%= @order.id %> </h3><br>
+
+<div class="row">
+
+  <div class="col-md-12">
+
+  <div class="opaque orders-table-width table-responsive">
+
+    <table class="table table-condensed">
+
+      <thead>
+        <th>Item</th>
+        <th class="text-center">Quantity</th>
+        <th class="text-center">Subtotal</th>
+      </thead>
+
+      <tbody>
+        <% @order.item_orders.each do |item_order| %>
+        <tr>
+          <th scope="row"><%= link_to item_order.item.title, item_path(item_order.item) %></th>
+            <td class="text-center"><%= item_order.quantity %></td>
+            <td class="text-center"><%= number_to_currency(item_order.subtotal, :unit => "$") %></td>
+        </tr>
+        <% end %>
+
+        <tr align="right">
+          <td></td>
+          <td></td>
+          <td>Status: <%= @order.status.capitalize if @order.status? %></td>
+        </tr>
+
+        <tr align="right">
+          <td></td>
+          <td></td>
+          <td>Submitted at: <%= @order.created_at.to_formatted_s(:long) %></td>
+        </tr>
+
+        <% if @order.status == "completed" %>
+          <tr align="right">
+            <td></td>
+            <td></td>
+            <td>Completed at: <%= @order.updated_at.to_formatted_s(:long) %></td>
+          </tr>
+        <% elsif @order.status == "cancelled" %>
+          <tr align="right">
+            <td></td>
+            <td></td>
+            <td>Canceled at: <%= @order.updated_at.to_formatted_s(:long) %></td>
+          </tr>
+        <% end %>
+
+        <tr align="right">
+          <td></td>
+          <td></td>
+          <td><p>Total Price: <%= number_to_currency(@order.total_price, :unit => "$") %></p></td>
+        </tr>
+      </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>

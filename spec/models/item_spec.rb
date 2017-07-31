@@ -11,5 +11,7 @@ RSpec.describe Item, type: :model do
   context "Relationships" do
     it { should have_many(:category_items) }
     it { should have_many(:categories) }
+    it { should have_many(:item_orders) }
+    it { should have_many(:orders) }
   end
 end

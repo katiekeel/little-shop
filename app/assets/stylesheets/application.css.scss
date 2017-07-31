@@ -18,7 +18,7 @@
 
 
 body {
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Metamorphous", cursive, "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
     background: url('http://paradiseintheworld.com/wp-content/uploads/2012/02/new-zealand-mountain.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -28,6 +28,10 @@ body {
     background-color: hsla(0,0%,100%,0.50);
     background-blend-mode: overlay;
     background-position: 0px 50px;
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
 }
 
 h1,
@@ -124,6 +128,13 @@ hr {
 footer {
     background: #fff;
     background: rgba(255,255,255,0.9);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
+    height: 10px;
 }
 
 footer p {
@@ -134,8 +145,8 @@ footer p {
 @media screen and (min-width:768px) {
     .brand {
         display: inherit;
-        margin: 0;
-        padding: 30px 0 10px;
+        margin: -20px;
+        padding: 0px 0 10px;
         text-align: center;
         font-family: "Aniron Bold","Helvetica Neue",Helvetica,Arial,sans-serif;
         font-size: 5em;
@@ -198,6 +209,17 @@ footer p {
       width: 200px;
   }
 
+  .carousel-inner .item .carousel-img {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+  }
+
+.carousel-inner {
+  height: 300px;
+}
+
+
   .page-titles {
     font-family: "Aniron Bold";
   }
@@ -219,13 +241,67 @@ footer p {
 .footer {
   background-color: hsla(0,0%,100%,0);
   background-blend-mode: overlay;
-}
-
-.item-text{
-  font-family: 'Spectral', serif;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  padding-top: 15px;
+  text-align: center;
 }
 
 .normal-text {
   font-family: "Metamorphous", cursive, "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 10pt;
+}
+
+.item-details {
+  width: 200px;
+  display: inline-block;
+  text-align: left;
+}
+
+#logged-in {
+  padding-top: 20px;
+  font-size: 10pt;
+  color: #999999;
+  padding-right: 25px;
+  display: inline-block;
+}
+
+
+.opaque {
+  background-color: hsla(0,0%,100%,0.5);
+  background-blend-mode: overlay;
+}
+
+.order-table-width {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.orders-table-width {
+  width: 750px;
+  margin: 0 auto;
+}
+
+.tabpanel, .nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+     zoom:1; /* hasLayout ie7 trigger */
+}
+
+.nav-tabs, .nav-pills {
+    text-align:center;
+    margin-top: 25px;
+    padding-top: 10px;
+}
+
+#tabs {
+  padding-top: 25px;
+}
+
+.tabpanel {
+  width: 625px;
 }
