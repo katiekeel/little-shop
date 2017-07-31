@@ -1,30 +1,41 @@
 <h1>Admin Dashboard</h1>
+<p><%= link_to "Edit Thine Account", '/edit_account' %></p>
 <div class="tabpanel">
 
   <ul class="nav nav-pills opaque" role="tablist">
     <li class="nav-item">
-      <a class="nav-link active" data-toggle="pill" href="#profile" role="pill">Profile</a>
+      <a class="nav-link active" data-toggle="pill" href="#orders" role="pill">All Orders</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="pill" href="#orders" role="pill">Orders</a>
+      <a class="nav-link disabled" data-toggle="pill" href="#ordered-orders" role="pill">Ordered</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link disabled" data-toggle="pill" href="#delete" role="pill">Delete Account</a>
+      <a class="nav-link disabled" data-toggle="pill" href="#paid-orders" role="pill">Paid</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" data-toggle="pill" href="#cancelled-orders" role="pill">Cancelled</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" data-toggle="pill" href="#completed-orders" role="pill">Completed</a>
+    </li>
+
   </ul>
-  
+
   <div class="tab-content opaque" id="tabs">
 
-    <div class="tab-pane" id="profile" role="tabpanel">
-      <p><%= link_to "Edit Thine Account", '/edit_account' %></p>
-    </div>
-
     <div class="tab-pane" id="orders" role="tabpanel">
-
     </div>
 
-    <div class="tab-pane" id="delete" role="tabpanel">
+    <div class="tab-pane" id="ordered-orders" role="tabpanel">
+    </div>
 
+    <div class="tab-pane" id="paid-orders" role="tabpanel">
+    </div>
+
+    <div class="tab-pane" id="cancelled-orders" role="tabpanel">
+    </div>
+
+    <div class="tab-pane" id="completed-orders" role="tabpanel">
     </div>
   </div>
 
