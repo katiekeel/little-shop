@@ -51,7 +51,7 @@
               <li><%= link_to dashboard_path do %>
                 <span class="glyphicon glyphicon-user"></span> Dashboard
                 <% end %></li>
-              <li><%= link_to logout_path do %>
+              <li><%= link_to logout_path, method: :delete do %>
                 <span class="glyphicon glyphicon-log-out"></span> Logout
                 <% end %></li>
             </ul>
