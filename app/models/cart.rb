@@ -27,4 +27,8 @@ class Cart
   def update_item(id, quantity)
     contents[id.to_s] = quantity.to_i
   end
+
+  def empty_cart
+    contents.clear
+  end
 end

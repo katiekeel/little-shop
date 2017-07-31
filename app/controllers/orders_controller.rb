@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
     @order = Order.new(user: current_user)
     create_item_orders
     @order.save
+    @cart.empty_cart
     flash[:message] = "Order was successfully placed"
     redirect_to orders_path
   end
