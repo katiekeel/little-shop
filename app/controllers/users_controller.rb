@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
+    redirect_to login_path unless current_user
   end
 
   def edit
@@ -40,7 +41,7 @@ class UsersController < ApplicationController
     user.destroy
     session.clear
     flash[:notice] = "Account destroyed, my lord."
-    redirect_to logout_path
+    redirect_to root_path
   end
 
   private

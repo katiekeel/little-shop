@@ -18,11 +18,11 @@
      <p class="normal-text"><strong><%= item.description %></strong></p>
      <h5><%= number_to_currency(item.price, :unit => "$") %></h5><br/>
     </span>
-     <%= form_tag("/cart") do %>
+     <%= form_tag(cart_path,method: :patch) do %>
        <%= hidden_field_tag(:item_id, item.id) %>
        <span class="normal-text"><%= label_tag(:quantity) %></span>
        <%= text_field_tag(:quantity, "#{@cart.contents[item.id.to_s]}", :size=>"2", class: "normal-text") %>
-       <%= submit_tag("Update", :class => "btn btn-primary normal-text", method: :puts) %>
+       <%= submit_tag("Update", :class => "btn btn-primary normal-text") %>
      <% end %><br/><br/>
      <p class="normal-text"><strong>Item Total: <%= number_to_currency(@cart.item_subtotal(item), :unit => "$") %></strong></p><br/>
      <%= button_to "Delete", cart_path(item_id: item.id), method: :delete, class: "btn btn-danger normal-text"  %><br/><br/><br/>

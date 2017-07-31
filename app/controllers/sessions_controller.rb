@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
       flash[:notice] = "We haveth no known user with that name. Please endeavour once more or createth thine account."
       render :new
     elsif user.authenticate(params[:session][:password])
+      flash[:notice].clear if flash[:notice]
       session[:user_id] = user.id
       redirect_to dashboard_path
     else
