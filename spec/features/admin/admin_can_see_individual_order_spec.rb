@@ -12,10 +12,11 @@ RSpec.feature "admin visits dashboard clicks on order" do
     #     As an authenticated Admin, when I visit an individual order page
     visit admin_dashboard_path
 
-    click_on "order-#{order.id}"
+
+    first(:link, "order-#{order.id}").click
 
 # Then I can see the order's date and time.
-    expect(page).to have_content(order.created_at)
+    expect(page).to have_content(order.created_at.to_formatted_s(:long))
 # And I can see the purchaser's full name and address.
     expect(page).to have_content(user.full_name)
     expect(page).to have_content(user.address)
