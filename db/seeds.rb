@@ -26,7 +26,7 @@ potatoes = Item.create!(title: "PO-TA-TOES", description: "Boil 'em, mash 'em, s
 army = Item.create!(title: "Aragorn's Ghost Army - 1 Hour", description: "They still owe him", price: 450.00, image_path: "https://vignette2.wikia.nocookie.net/lotr/images/8/8b/Aragorn-Dead_army.jpg/revision/latest?cb=20130319232933")
 mud = Item.create!(title: "Orc Mud", description: "For making nice orcses, yes", price: 1.00, image_path: "https://vignette4.wikia.nocookie.net/lotr/images/3/30/1auruk-hai.jpg/revision/latest/scale-to-width-down/230?cb=20110607170014")
 cart = Item.create!(title: "Sturdy Wooden Cart", description: "Yo dawg, we heard you like carts", price: 50.00, image_path: "http://i.ebayimg.com/00/s/NTAwWDUwMA==/z/juAAAMXQyY1TWJRo/$_35.JPG?set_id=2")
-joel = Item.create!(title: "The Joel Special", description: "A gilt-edged ")
+joel = Item.create!(title: "The Joel Special", description: "A gilt-edged, framed photo of Frodo", price: 0.01, image_path: "https://files.slack.com/files-pri/T029P2S9M-F6F3UGE65/untitledjk.png")
 
 elven_ware = Category.create!(title: "Elven Ware")
 journeying = Category.create!(title: "Journeying And War")
@@ -35,7 +35,7 @@ pure_evil = Category.create!(title: "Pure Evil")
 
 elven_ware.items << [rope, bread, sting, anduril, shirt, hair]
 journeying.items << [shirt, bread, rope, pony, pipe, shadowfax, guitar, axe, sting, anduril, horn, army]
-home_hearth.items << [rope, bread, pony, door, pipe, guitar, hair, fish, mushrooms, potatoes, cart]
+home_hearth.items << [rope, bread, pony, door, pipe, guitar, hair, fish, mushrooms, potatoes, cart, joel]
 pure_evil.items << [palantir, ring, cloak, mud]
 
 frodo = User.create!(username: "frodo", password: "frodo", full_name: "Frodo Baggins", address: "Bag End, Bagshot Row, Hobbiton, The Shire")
