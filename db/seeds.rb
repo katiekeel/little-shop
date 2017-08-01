@@ -33,11 +33,10 @@ mud = Item.create!(category: pure_evil, title: "Orc Mud", description: "For maki
 cart = Item.create!(category: home_hearth, title: "Sturdy Wooden Cart", description: "Yo dawg, we heard you like carts", price: 50.00, image_path: "http://i.ebayimg.com/00/s/NTAwWDUwMA==/z/juAAAMXQyY1TWJRo/$_35.JPG?set_id=2")
 joel = Item.create!(category: pure_evil, title: "The Joel Special", description: "A gilt-edged, framed photo of Frodo", price: 0.01, image_path: "https://files.slack.com/files-pri/T029P2S9M-F6F3UGE65/untitledjk.png")
 
-elven_ware.items << [rope, bread, sting, anduril, shirt, hair]
 
 frodo = User.create!(username: "frodo", password: "frodo", full_name: "Frodo Baggins", address: "Bag End, Bagshot Row, Hobbiton, The Shire")
 bilbo = User.create!(username: "bilbo", password: "bilbo", full_name: "Bilbo Baggins", address: "Bag End, Bagshot Row, Hobbiton, The Shire")
 sam = User.create!(username: "sam", password: "sam", full_name: "Samwise Gamgee", address: "Sam's House, Hobbiton, The Shire")
 gollum = User.create!(username: "gollum", password: "gollum", full_name: "Smeagol/Gollum", address: "A Terrible Cave, Who Knows Where, Probably Mordor")
 eowyn = User.create!(username: "eowyn", password: "eowyn", full_name: "Eowyn Dernhelm", address: "Prince's Palace, Ithilien, Gondor")
-admin = User.create!(username: "admin", password: "admin")
+admin = User.create!(username: "admin", password: "admin", role: "admin")
