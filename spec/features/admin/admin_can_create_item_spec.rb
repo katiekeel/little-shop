@@ -18,16 +18,17 @@ RSpec.feature "Admin creates item" do
     expect(current_path).to eq("/admin/items")
     expect(page).to have_link("the one ring")
     expect(page).to have_content("to rule them all")
-    expect(page).to have_content("$5.00")
+    expect(page).to have_content("Active")
     expect(page).to have_css("img", count:1)
-
-# I can create an item.
-#
-# An item must have a title, description and price.
-# An item must belong to at least one category.
-# The title and description cannot be empty.
-# The title must be unique for all items in the system.
-# The price must be a valid decimal numeric value and greater than zero.
-# The photo is optional. If not present, a stand-in photo is used.
-end
+  end
+  xscenario "sad_path"
+    # I can create an item.
+    #
+    # An item must have a title, description and price.
+    # An item must belong to at least one category.
+    # The title and description cannot be empty.
+    # The title must be unique for all items in the system.
+    # The price must be a valid decimal numeric value and greater than zero.
+    # The photo is optional. If not present, a stand-in photo is used.
+  end
 end

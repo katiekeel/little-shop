@@ -10,9 +10,9 @@
     <% @items.each do |item| %>
     <tr>
       <th scope = "row"><img class="img-responsive item-images img-thumbnail" src="<%= item.image_path %>" alt="item image"></th>
-      <td><%= item.title %></td>
+      <td><%= link_to item.title, admin_item_path(item) %></td>
       <td><%= item.description %></td>
-      <td><%= item.status %></td>
+      <td><%= item.status.capitalize %></td>
       <td><%= link_to "Edit", edit_admin_item_path(item) %></td>
     </tr>
     <% end %>

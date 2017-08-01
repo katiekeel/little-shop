@@ -12,15 +12,15 @@ RSpec.feature "Admin clicks on view items link" do
 
     within("tbody tr[1]") do
       expect(page).to have_link(item_1.title)
-      expect(page).to have_link(item_1.description)
-      expect(page).to have_link(item_1.price)
+      expect(page).to have_content(item_1.description)
+      expect(page).to have_content(item_1.status.capitalize)
       expect(page).to have_css("img", count:1)
     end
 
     within("tbody tr[2]") do
       expect(page).to have_link(item_2.title)
-      expect(page).to have_link(item_2.description)
-      expect(page).to have_link(item_2.price)
+      expect(page).to have_content(item_2.description)
+      expect(page).to have_content(item_2.status.capitalize)
       expect(page).to have_css("img", count:1)
     end
   end
