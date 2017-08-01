@@ -1,5 +1,8 @@
 FactoryGirl.define do
   factory :item do
+    before(:create) do |item|
+      item.categories << create(:category)
+    end
 
     sequence :title do |n|
       "title #{n}"
@@ -15,9 +18,6 @@ FactoryGirl.define do
 
     image_path "https://vignette2.wikia.nocookie.net/lotr/images/5/54/Untitledjk.png"
 
-    # after_create do |job|
-    #   item.categories << create(:category)
-    # end
-  end
 
+  end
 end
