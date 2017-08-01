@@ -15,5 +15,9 @@ FactoryGirl.define do
 
     image_path "https://vignette2.wikia.nocookie.net/lotr/images/5/54/Untitledjk.png"
 
+    # after_create do |job|
+    #   item.categories << create(:category)
+    # end
   end
+
 end
