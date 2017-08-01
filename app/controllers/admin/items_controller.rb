@@ -4,8 +4,8 @@ class Admin::ItemsController < Admin::BaseController
   end
 
   def create
-    item = Item.new(item_params)
-    if item.save
+    @item = Item.new(item_params)
+    if @item.save
       flash[:notice] = "Item Created"
       redirect_to admin_items_path
     else
