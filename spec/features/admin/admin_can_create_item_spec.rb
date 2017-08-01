@@ -9,8 +9,8 @@ RSpec.feature "Admin creates item" do
     fill_in "item_title", with: "the one ring"
     fill_in "item_description", with: "to rule them all"
     fill_in "item_price", with: 5.00
-    check("category-#{cat_2.id}")
-    check("category-#{cat_3.id}")
+    check("item_category_ids_#{cat_2.id}")
+    check("item_category_ids_#{cat_3.id}")
     fill_in "item_image_path", with: "https://vignette2.wikia.nocookie.net/lotr/images/5/54/Untitledjk.png"
 
     click_on "Create Item"
