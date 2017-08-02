@@ -7,11 +7,11 @@ RSpec.feature "user can checkout" do
     visit items_path
 
     within(".item-#{item_1.id}") do
-      click_on("Add to Cart")
+      find(:css, ".index-cart").click
     end
 
     within(".item-#{item_2.id}") do
-      click_on("Add to Cart")
+      find(:css, ".index-cart").click
     end
 
     click_link "Cart"
