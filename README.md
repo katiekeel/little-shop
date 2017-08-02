@@ -4,31 +4,25 @@ A basic e-commerce app with cart/order functionality and a sweet nerdy theme.
 
 ## Getting Started
 
-Navigate to our app [here](https://little-shop-of-hobbits.herokuapp.com/). Add sweet wizard and/or elf stuff to your cart. Check out and a giant eagle will drop your stuff off on your porch.
-
-## Developing
-
-This is a Rails app, which makes it easy to use and modify.
-
 ```
 git clone git@github.com:katiekeel/little-shop.git
 cd little-shop
 bundle install
 ```
 
+## Developing
+
+This is a [Rails app](http://rubyonrails.org/), which makes it easy to use and modify.
+
 ## Deploying/Publishing
 
-If you want to customize this shop and host it on Heroku, instructions are [here](https://devcenter.heroku.com/start).
+If you want to host your shop on Heroku, instructions are [here](https://devcenter.heroku.com/start).
 
 ## Features
 
 Customers can shop for items, place them in their cart, check out, and see their order details afterward. They are able to view the contents of their cart and their order total before they check out. Users without an account who add things to their cart can maintain the same cart when logged in.
 
 Site owner (admin) can manage products and categories, and is responsible for order processing and completion.
-
-## Configuration
-
-Info about potential customization options here.
 
 ## Contributing
 
