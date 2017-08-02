@@ -22,7 +22,7 @@
       <td><%= link_to item.title, admin_item_path(item) %></td>
       <td><%= item.description %></td>
       <td><%= item.status.capitalize %></td>
-      <td class="admin-item-edit-button"><%= button_to "Edit", edit_admin_item_path(item), class: "btn btn-primary" %></td>
+      <td class="admin-item-edit-button"><%= link_to "Edit", edit_admin_item_path(item), class: "btn btn-primary" %></td>
     </tr>
     <% end %>
   </tbody>
