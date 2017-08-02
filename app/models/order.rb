@@ -12,21 +12,4 @@ class Order < ApplicationRecord
   def self.find_all_by_status(status)
     self.where(status: status)
   end
-
-  def ordered
-    self.where(status: "ordered")
-  end
-
-  def paid
-    self.where(status: "paid")
-  end
-
-  def cancelled
-    self.where(status: "cancelled")
-  end
-
-  def completed
-    self.where(status: "completed")
-  end
-
 end
