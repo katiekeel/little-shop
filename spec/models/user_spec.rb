@@ -17,9 +17,9 @@ RSpec.describe User, type: :model do
     it "most ordered item returns most orderd item for user" do
       item_1, item_2 = create_list(:item, 2, price: 5)
       user = create(:user)
-      order_1 = create(:order, user_id: user.id, status: 3)
+      order_1, order_2 = create_list(:order, user_id: user.id, status: 3)
       create(:item_order, item: item_1, order: order_1, quantity: 1)
-      create(:item_order, item: item_1, order: order_1, quantity: 1)
+      create(:item_order, item: item_1, order: order_2, quantity: 1)
       create(:item_order, item: item_2, order: order_1, quantity: 2)
       create(:item_order, item: item_2, order: order_1, quantity: 2)
       create(:item_order, item: item_2, order: order_1, quantity: 2)
