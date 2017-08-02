@@ -5,11 +5,11 @@ RSpec.feature "visitor can add items to cart and upon login" do
     visit '/items'
 
     within(".item-#{item_1.id}") do
-      click_on("Add to Cart")
+      find(:css, ".index-cart").click
     end
 
     within(".item-#{item_2.id}") do
-      click_on("Add to Cart")
+      find(:css, ".index-cart").click
     end
     click_link "Cart"
 

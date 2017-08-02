@@ -2,8 +2,8 @@ RSpec.feature "User decreases cart quantity of item" do
   scenario "the change is reflected in the cart" do
     item_1 = create(:item, price: 1.00)
     visit '/items'
-    click_button("Add to Cart")
-    click_button("Add to Cart")
+    find(:css, ".index-cart").click
+    find(:css, ".index-cart").click
     click_link "Cart"
 
     expect(page).to have_content("Item Total: $2.00")
@@ -23,8 +23,8 @@ RSpec.feature "User decreases cart quantity of item" do
   scenario "the quantity of 0 removes item from cart" do
     item_1 = create(:item, price: 1.00)
     visit '/items'
-    click_button("Add to Cart")
-    click_button("Add to Cart")
+    find(:css, ".index-cart").click
+    find(:css, ".index-cart").click
     click_link "Cart"
 
     expect(page).to have_content("Item Total: $2.00")

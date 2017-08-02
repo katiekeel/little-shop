@@ -13,6 +13,6 @@ RSpec.feature "when a visitor visits items index" do
     expect(page).to have_content(item_1.price)
     expect(page).to have_content(item_2.price)
     expect(page).to have_content(item_3.price)
-    expect(page).to have_css("img", count:3)
+    expect(page).to have_css("img", count:6)
   end
 end

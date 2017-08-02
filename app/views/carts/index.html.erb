@@ -2,34 +2,55 @@
   <br/></br/><h4 class="page-titles">Cart Total: <br/></h4>
   <h2 class="page-titles"><%= number_to_currency(@cart.total_price, :unit => "$") %></h2><br/><br/>
 
-  <% if current_user && !@items.empty?  %>
-    <h3><%= link_to "Checkout", orders_path, method: :post %></h3><br/><br/>
-  <% elsif current_user.nil? %>
-    <h3><%=link_to "Login", login_path%>, or <%= link_to "Create Account", new_user_path %> to Checkout</h3>
-  <% end %>
+    <% if current_user && !@items.empty?  %>
+      <h3><%= link_to "Checkout", orders_path, method: :post %></h3><br/><br/>
+    <% elsif current_user.nil? %>
+      <h3><%=link_to "Login", login_path%>, or <%= link_to "Create Account", new_user_path %> to Checkout</h3>
+    <% end %>
 
   <div class="opaque item-partial">
+    <div class="row">
+      <% @items.each do |item| %>
+        <div class="col-md-3 col-sm-6 col-lg-3 item-<%= item.id %> small-item">
+          <img class="img-responsive item-images img-thumbnail" src="<%= item.image_path %>" alt="item image"><br/>
+            <span class="item-text">
+              <a  data-toggle="modal" href="#modal-<%= item.id %>">
+                <strong><h4><%= item.title %></h4></strong>
+              </a>
+              <p class="normal-text"><strong><%= item.description %></strong></p>
+              <h5><%= number_to_currency(item.price, :unit => "$") %></h5><br/>
+            </span>
+            <%= form_tag(cart_path,method: :patch) do %>
+             <%= hidden_field_tag(:item_id, item.id) %>
+               <span class="normal-text"><%= label_tag(:quantity) %></span>
+             <%= text_field_tag(:quantity, "#{@cart.contents[item.id.to_s]}", :size=>"2", class: "normal-text") %>
+             <%= submit_tag("Update", :class => "btn btn-primary normal-text") %>
+            <% end %><br/><br/>
+            <p class="normal-text"><strong>Item Total: <%= number_to_currency(@cart.item_subtotal(item), :unit => "$") %></strong></p><br/>
+            <%= button_to "Delete", cart_path(item_id: item.id), method: :delete, class: "btn btn-danger normal-text"  %><br/><br/><br/>
 
-  <div class="row">
 
-  <% @items.each do |item| %>
-  <div class="col-md-3 col-sm-6 col-lg-3 item-<%= item.id %> small-item">
-    <img class="img-responsive item-images img-thumbnail" src="<%= item.image_path %>" alt="item image"><br/>
-    <span class="item-text">
-    <strong><h4><%= item.title %></h4></strong>
-     <p class="normal-text"><strong><%= item.description %></strong></p>
-     <h5><%= number_to_currency(item.price, :unit => "$") %></h5><br/>
-    </span>
-     <%= form_tag(cart_path,method: :patch) do %>
-       <%= hidden_field_tag(:item_id, item.id) %>
-       <span class="normal-text"><%= label_tag(:quantity) %></span>
-       <%= text_field_tag(:quantity, "#{@cart.contents[item.id.to_s]}", :size=>"2", class: "normal-text") %>
-       <%= submit_tag("Update", :class => "btn btn-primary normal-text") %>
-     <% end %><br/><br/>
-     <p class="normal-text"><strong>Item Total: <%= number_to_currency(@cart.item_subtotal(item), :unit => "$") %></strong></p><br/>
-     <%= button_to "Delete", cart_path(item_id: item.id), method: :delete, class: "btn btn-danger normal-text"  %><br/><br/><br/>
+  <!-- Modal -->
+            <div class="modal fade" id="modal-<%= item.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal-dialog modal-md col-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="container-fluid">
+                      <div class="row">
+                        <%= render :partial => "items/item", locals: {item: item} %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+    </div>
   </div>
-  <% end %>
-  </div>
-</div>
 </div>

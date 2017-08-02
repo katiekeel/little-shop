@@ -2,7 +2,7 @@ RSpec.feature "User increases cart quantity of item" do
   scenario "the change is reflected in the cart" do
     item_1 = create(:item, price: 1.00)
     visit '/items'
-    click_button("Add to Cart")
+    find(:css, ".index-cart").click
     click_link "Cart"
 
     expect(page).to have_content("Item Total: $1.00")

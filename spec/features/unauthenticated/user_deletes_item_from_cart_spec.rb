@@ -5,11 +5,11 @@ RSpec.feature "Visitor deletes item from cart" do
     visit '/items'
 
     within(".item-#{item_1.id}") do
-      click_on("Add to Cart")
+      find(:css, ".index-cart").click
     end
 
     within(".item-#{item_2.id}") do
-      click_on("Add to Cart")
+      find(:css, ".index-cart").click
     end
 
     click_link "Cart"
@@ -21,7 +21,7 @@ RSpec.feature "Visitor deletes item from cart" do
     within(".item-#{item_1.id}") do
       click_button "Delete"
     end
-    
+
     expect(current_path).to eq(cart_path)
     expect(page).to have_content("You have successfully removed #{item_1.title} from the cart.")
     expect(page).to have_link item_1.title, href: item_path(item_1)
