@@ -8,7 +8,7 @@ describe "Admin edits an item" do
 
       visit '/admin/items'
 
-      first(:button, "Edit").click
+      first(:link, "Edit").click
 
       expect(current_path).to eq "/admin/items/#{item_1.id}/edit"
 
