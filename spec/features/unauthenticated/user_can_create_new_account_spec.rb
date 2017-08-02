@@ -12,9 +12,9 @@ RSpec.feature "User can create new account" do
 
     click_link("Createth Thine Account")
 
-    fill_in "user[username]", with: "Bilbo"
-    fill_in "user[password]", with: "Bilbo123"
-    fill_in "user[password_confirmation]", with: "Bilbo123"
+    fill_in "user[username]", with: "aragorn"
+    fill_in "user[password]", with: "aragorn123"
+    fill_in "user[password_confirmation]", with: "aragorn123"
 
     click_button("Signeth Thou Up")
 
@@ -66,7 +66,7 @@ RSpec.feature "User can create new account" do
 
     click_link("Createth Thine Account")
 
-    fill_in "user[username]", with: "sauron"
+    fill_in "user[username]", with: "gandalf"
     fill_in "user[password]", with: ""
     fill_in "user[password_confirmation]", with: ""
 
@@ -89,7 +89,7 @@ RSpec.feature "User can create new account" do
 
     click_link("Createth Thine Account")
 
-    fill_in "user[username]", with: "sauron"
+    fill_in "user[username]", with: "frodo"
     fill_in "user[password]", with: "Bilbo123"
     fill_in "user[password_confirmation]", with: "not bilbo123"
 
