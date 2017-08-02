@@ -35,5 +35,10 @@ RSpec.describe Cart do
       expected = {@item_2.id.to_s => 1}
       expect(@cart.contents).to eq(expected)
     end
+    it "#update_item updates item quantity" do
+      @cart.update_item(@item_2.id, 5)
+      expected = {@item_1.id.to_s => 2, @item_2.id.to_s => 5}
+      expect(@cart.contents).to eq(expected)
+    end
   end
 end
