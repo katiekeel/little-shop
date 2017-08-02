@@ -1,9 +1,9 @@
 RSpec.feature "Admin edits the user" do
   scenario "Admin can edit their own account" do
-    # As a logged in Admin
+
     user = create(:user, role: "admin")
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-    # I can modify my account data
+
     visit admin_dashboard_path
 
     click_link("Edit Thine Account")
@@ -22,12 +22,11 @@ RSpec.feature "Admin edits the user" do
   end
 
   scenario "Cannot modify any other users account" do
-    # As a logged in Admin
+
     user = create(:user, role: "admin")
     user2 = create(:user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-    # But I cannot modify any other user's account data
     visit edit_account_path
     expect(page).to_not have_content(user2.username)
 
@@ -35,6 +34,4 @@ RSpec.feature "Admin edits the user" do
 
     expect(page).to have_content("You shall not pass")
   end
-
-
 end
