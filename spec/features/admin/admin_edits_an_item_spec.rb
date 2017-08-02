@@ -29,7 +29,7 @@ describe "Admin edits an item" do
     end
   end
 
-  scenario "with invalid attributes =(" do
+  scenario "with invalid attributes - no title =(" do
     cat_1, cat_2, cat_3 = create_list(:category, 3)
     admin = create(:user, role: "admin")
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
@@ -45,7 +45,6 @@ describe "Admin edits an item" do
     click_on "Create Item"
 
     expect(page).to have_content("Item not created. Please try again.")
-
   end
 
   scenario "with default image if they leave it blank" do
@@ -65,5 +64,4 @@ describe "Admin edits an item" do
 
     expect(page).to have_xpath("//img[contains(@src,'https://vignette2.wikia.nocookie.net/lotr/images/5/54/Untitledjk.png')]")
   end
-
 end
