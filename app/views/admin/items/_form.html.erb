@@ -1,17 +1,19 @@
 <%= form_for [:admin, @item] do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %><br>
-  <%= f.label :description %>
-  <%= f.text_field :description %><br>
-  <%= f.label :price %>
-  <%= f.text_field :price %><br>
-  <%= f.label :image_path %>
-  <%= f.text_field :image_path %><br>
-  <%= f.label :categories %>
-  <%= f.fields_for :categories, @item.categories do |category| %>
-    <%= f.collection_check_boxes :category_ids, Category.all, :id, :title %>
-  <% end %><br>
+  <%= f.label :title %><br/>
+  <%= f.text_field :title %><br><br/>
+  <%= f.label :description %><br/>
+  <%= f.text_field :description %><br><br/>
+  <%= f.label :price %><br/>
+  <%= f.text_field :price %><br><br/>
+  <%= f.label :image_path %><br/>
+  <%= f.text_field :image_path %><br><br/>
+  <%= f.label :categories %><br/>
 
-    <%= f.select :status, ["active", "retired"] %>
+  <%= f.fields_for :categories, @item.categories do |category| %><br/>
+    <%= f.collection_check_boxes :category_ids, Category.all, :id, :title %>
+  <% end %><br><br/>
+
+  <%= f.label :status %><br/>
+  <%= f.select :status, ["active", "retired"] %><br/><br/>
   <%= f.submit %>
 <% end %>
