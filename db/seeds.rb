@@ -108,4 +108,4 @@ bilbo = User.create!(username: "bilbo", password: "bilbo", full_name: "Bilbo Bag
 sam = User.create!(username: "sam", password: "sam", full_name: "Samwise Gamgee", address: "Sam's House, Hobbiton, The Shire")
 gollum = User.create!(username: "gollum", password: "gollum", full_name: "Smeagol/Gollum", address: "A Terrible Cave, Who Knows Where, Probably Mordor")
 eowyn = User.create!(username: "eowyn", password: "eowyn", full_name: "Eowyn Dernhelm", address: "Prince's Palace, Ithilien, Gondor")
-admin = User.create!(username: "admin", password: "admin", role: "admin")
+admin = User.create!(username: "admin", password: "admin", role: "admin", full_name: "admin", address: "admin")
