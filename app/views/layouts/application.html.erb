@@ -48,9 +48,15 @@
               <li><%= link_to orders_path do %>
                 <span class="glyphicon glyphicon-credit-card"></span> Orders
                 <% end %></li>
+              <% if current_user && current_user.default? %>
               <li><%= link_to dashboard_path do %>
                 <span class="glyphicon glyphicon-user"></span> Dashboard
                 <% end %></li>
+              <% elsif current_user && current_user.admin? %>
+              <li><%= link_to admin_dashboard_path do %>
+                <span class="glyphicon glyphicon-user"></span> Dashboard
+                <% end %></li>
+              <% end %>
               <li><%= link_to logout_path, method: :delete do %>
                 <span class="glyphicon glyphicon-log-out"></span> Logout
                 <% end %></li>
