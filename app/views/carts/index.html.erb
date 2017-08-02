@@ -9,9 +9,7 @@
     <% end %>
 
   <div class="opaque item-partial">
-
     <div class="row">
-
       <% @items.each do |item| %>
         <div class="col-md-3 col-sm-6 col-lg-3 item-<%= item.id %> small-item">
           <img class="img-responsive item-images img-thumbnail" src="<%= item.image_path %>" alt="item image"><br/>
@@ -30,7 +28,7 @@
             <% end %><br/><br/>
             <p class="normal-text"><strong>Item Total: <%= number_to_currency(@cart.item_subtotal(item), :unit => "$") %></strong></p><br/>
             <%= button_to "Delete", cart_path(item_id: item.id), method: :delete, class: "btn btn-danger normal-text"  %><br/><br/><br/>
-        </div>
+
 
   <!-- Modal -->
             <div class="modal fade" id="modal-<%= item.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -51,10 +49,8 @@
                 </div>
               </div>
             </div>
-            <% end %>
           </div>
-        </div>
-      </div>
+        <% end %>
     </div>
   </div>
 </div>
