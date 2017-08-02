@@ -40,5 +40,9 @@ RSpec.describe Cart do
       expected = {@item_1.id.to_s => 2, @item_2.id.to_s => 5}
       expect(@cart.contents).to eq(expected)
     end
+    it "#empty_cart removes all items for cart" do
+      @cart.empty_cart
+      expect(@cart.contents).to eq({})
+    end
   end
 end
