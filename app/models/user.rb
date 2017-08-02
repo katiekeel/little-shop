@@ -5,6 +5,8 @@ class User < ApplicationRecord
 
   validates_presence_of :username
   validates_uniqueness_of :username
+  validates_presence_of :full_name
+  validates_presence_of :address
 
   has_many :orders, dependent: :destroy
 
