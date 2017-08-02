@@ -2,13 +2,12 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '/dashboard', to: 'admin#index'
-    resources :items, only: [:new, :create, :index, :show, :edit, :update]
   end
 
   resources :items, only: [:index, :show]
   resources :carts, only: [:create]
   resources :users, only: [:new, :create]
-  resources :orders, only: [:index, :show, :create, :update]
+  resources :orders, only: [:index, :show, :create]
 
   get '/edit_account', to: 'users#edit'
   patch '/update_account', to: 'users#update'

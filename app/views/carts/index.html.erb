@@ -8,8 +8,6 @@
     <h3><%=link_to "Login", login_path%>, or <%= link_to "Create Account", new_user_path %> to Checkout</h3>
   <% end %>
 
-  <div class="opaque item-partial">
-
   <div class="row">
 
   <% @items.each do |item| %>
@@ -31,5 +29,4 @@
   </div>
   <% end %>
   </div>
-</div>
 </div>
