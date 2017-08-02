@@ -18,20 +18,20 @@
 
 
 body {
-    font-family: "Metamorphous", cursive, "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background: url('http://paradiseintheworld.com/wp-content/uploads/2012/02/new-zealand-mountain.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-    padding-top: 100px;
-    background-color: hsla(0,0%,100%,0.50);
-    background-blend-mode: overlay;
-    background-position: 0px 50px;
-    position: relative;
-    margin: 0;
-    padding-bottom: 6rem;
-    min-height: 100%;
+  font-family: "Metamorphous", cursive, "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  background: url('http://paradiseintheworld.com/wp-content/uploads/2012/02/new-zealand-mountain.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  padding-top: 100px;
+  background-color: hsla(0,0%,100%,0.50);
+  background-blend-mode: overlay;
+  background-position: 0px 50px;
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
 }
 
 h1,
@@ -40,202 +40,202 @@ h3,
 h4,
 h5,
 h6 {
-    text-transform: uppercase;
-    font-family: "Metamorphous", cursive, "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
-    letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: "Metamorphous", cursive, "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 p {
-    font-size: 1.25em;
-    line-height: 1.6;
-    color: #000;
+  font-size: 1.25em;
+  line-height: 1.6;
+  color: #000;
 }
 
 hr {
-    max-width: 400px;
-    border-color: #999999;
+  max-width: 400px;
+  border-color: #999999;
 }
 
 .brand,
 .address-bar {
-    display: none;
+  display: none;
 }
 
 .navbar-brand {
-    text-transform: uppercase;
-    font-weight: 900;
-    letter-spacing: 2px;
-    font-family: "Aniron Regular";
-    color: #000;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-family: "Aniron Regular";
+  color: #000;
 }
 
 .navbar-nav {
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 3px;
 }
 
 .img-full {
-    min-width: 100%;
+  min-width: 100%;
 }
 
 .brand-before,
 .brand-name {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 .brand-before {
-    margin: 15px 0;
+  margin: 15px 0;
 }
 
 .brand-name {
-    margin: 0;
-    font-size: 4em;
+  margin: 0;
+  font-size: 4em;
 }
 
 .tagline-divider {
-    margin: 15px auto 3px;
-    max-width: 250px;
-    border-color: #999999;
+  margin: 15px auto 3px;
+  max-width: 250px;
+  border-color: #999999;
 }
 
 .box {
-    margin-bottom: 20px;
-    padding: 30px 15px;
-    background: #fff;
-    background: rgba(255,255,255,0.9);
+  margin-bottom: 20px;
+  padding: 30px 15px;
+  background: #fff;
+  background: rgba(255,255,255,0.9);
 }
 
 .intro-text {
-    text-transform: uppercase;
-    font-size: 1.25em;
-    font-weight: 400;
-    letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 1.25em;
+  font-weight: 400;
+  letter-spacing: 1px;
 }
 
 .img-border {
-    float: none;
-    margin: 0 auto 0;
-    border: #999999 solid 1px;
+  float: none;
+  margin: 0 auto 0;
+  border: #999999 solid 1px;
 }
 
 .img-left {
-    float: none;
-    margin: 0 auto 0;
+  float: none;
+  margin: 0 auto 0;
 }
 
 footer {
-    background: #fff;
-    background: rgba(255,255,255,0.9);
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 1rem;
-    text-align: center;
-    height: 10px;
+  background: #fff;
+  background: rgba(255,255,255,0.9);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+  height: 10px;
 }
 
 footer p {
-    margin: 0;
-    padding: 50px 0;
+  margin: 0;
+  padding: 50px 0;
 }
 
 @media screen and (min-width:768px) {
-    .brand {
-        display: inherit;
-        margin: -20px;
-        padding: 0px 0 10px;
-        text-align: center;
-        font-family: "Aniron Bold","Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-size: 5em;
-        font-weight: 700;
-        line-height: normal;
-        color: #000;
-    }
+  .brand {
+    display: inherit;
+    margin: -20px;
+    padding: 0px 0 10px;
+    text-align: center;
+    font-family: "Aniron Bold","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 5em;
+    font-weight: 700;
+    line-height: normal;
+    color: #000;
+  }
 
-    .top-divider {
-        margin-top: 0;
-    }
+  .top-divider {
+    margin-top: 0;
+  }
 
-    .img-left {
-        float: left;
-        margin-right: 25px;
-    }
+  .img-left {
+    float: left;
+    margin-right: 25px;
+  }
 
-    .address-bar {
-        display: inherit;
-        margin: 0;
-        padding: 0 0 40px;
-        text-align: center;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        text-transform: uppercase;
-        font-size: 1.25em;
-        font-weight: 400;
-        letter-spacing: 3px;
-        color: #444444;
-        font-family: "Aniron Regular";
-    }
+  .address-bar {
+    display: inherit;
+    margin: 0;
+    padding: 0 0 40px;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    text-transform: uppercase;
+    font-size: 1.25em;
+    font-weight: 400;
+    letter-spacing: 3px;
+    color: #444444;
+    font-family: "Aniron Regular";
+  }
 
-    .navbar {
-        border-radius: 0;
-        background-color: #000;
-    }
+  .navbar {
+    border-radius: 0;
+    background-color: #000;
+  }
 
-    .navbar-header {
-        display: none;
-    }
+  .navbar-header {
+    display: none;
+  }
 
-    .navbar {
-        min-height: 0;
-    }
+  .navbar {
+    min-height: 0;
+  }
 
-    .navbar-default {
-        border: none;
-        background: #000;
-        background: rgba(255,255,255,0.9);
-    }
+  .navbar-default {
+    border: none;
+    background: #000;
+    background: rgba(255,255,255,0.9);
+  }
 
-    .navbar-nav>li>a {
-        line-height: normal;
-        font-family: "Aniron Regular";
-    }
+  .navbar-nav>li>a {
+    line-height: normal;
+    font-family: "Aniron Regular";
+  }
 
 }
 
-  .item-images {
-      height: 200px;
-      width: 200px;
-  }
+.item-images {
+  height: 200px;
+  width: 200px;
+}
 
-  .carousel-inner .item .carousel-img {
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-  }
+.carousel-inner .item .carousel-img {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
 
 .carousel-inner {
-  height: 300px;
+  height: 400px;
 }
 
 
-  .page-titles {
-    font-family: "Aniron Bold";
-  }
+.page-titles {
+  font-family: "Aniron Bold";
+}
 
 @media screen and (min-width:1200px) {
-    .box:after {
-        content: '';
-        display: table;
-        clear: both;
-    }
+  .box:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
 }
 
 @media only screen {
-    .small-item:nth-of-type(4n + 1) {
-        clear: both;
-    }
+  .small-item:nth-of-type(4n + 1) {
+    clear: both;
+  }
 }
 
 .footer {
@@ -286,16 +286,16 @@ footer p {
 }
 
 .tabpanel, .nav-tabs > li, .nav-pills > li {
-    float:none;
-    display:inline-block;
-    *display:inline; /* ie7 fix */
-     zoom:1; /* hasLayout ie7 trigger */
+  float:none;
+  display:inline-block;
+  *display:inline; /* ie7 fix */
+  zoom:1; /* hasLayout ie7 trigger */
 }
 
 .nav-tabs, .nav-pills {
-    text-align:center;
-    margin-top: 25px;
-    padding-top: 10px;
+  text-align:center;
+  margin-top: 25px;
+  padding-top: 10px;
 }
 
 #tabs {
@@ -309,7 +309,7 @@ footer p {
 .item-partial {
   padding-top: 25px;
 }
-  
+
 .admin-tabpanel {
   width: 750px;
 }
