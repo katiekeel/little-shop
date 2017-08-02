@@ -26,9 +26,14 @@ RSpec.describe Cart do
       expected = @item_1.price * 2 + @item_2.price
       expect(@cart.total_price).to eq(expected)
     end
-    it "#item_subtotal returns total cart price" do
-      expected = @item_1.price * 2 + @item_2.price
-      expect(@cart.total_price).to eq(expected)
+    it "#item_subtotal returns subtotal" do
+      expected = @item_1.price * 2
+      expect(@cart.item_subtotal(@item_1)).to eq(expected)
+    end
+    it "#delete_item removes item from content" do
+      @cart.delete_item(@item_1.id)
+      expected = {@item_2.id.to_s => 1}
+      expect(@cart.contents).to eq(expected)
     end
   end
 end
