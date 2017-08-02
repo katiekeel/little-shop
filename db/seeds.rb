@@ -98,7 +98,7 @@ cart = Item.new(title: "Sturdy Wooden Cart", description: "Yo dawg, we heard you
   cart.categories << [home_hearth, sauron]
   cart.save
 
-joel = Item.new(title: "The Joel Special", description: "A gilt-edged, framed photo of Frodo", price: 0.01, image_path: "https://files.slack.com/files-pri/T029P2S9M-F6F3UGE65/untitledjk.png")
+joel = Item.new(title: "The Joel Special", description: "A gilt-edged, framed photo of Frodo", price: 0.01, image_path: "https://vignette2.wikia.nocookie.net/lotr/images/5/54/Untitledjk.png")
   joel.categories << [pure_evil, sauron]
   joel.save
 
