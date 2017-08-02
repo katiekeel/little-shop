@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     redirect_to login_path unless current_user
+    render file: "/public/404" if current_admin?
   end
 
   def edit
@@ -29,7 +30,8 @@ class UsersController < ApplicationController
     @user.update(user_params)
     if @user.save
       flash[:notice] = "Thine information has been updated!"
-      redirect_to dashboard_path
+      redirect_to dashboard_path if current_user.default?
+      redirect_to admin_dashboard_path if current_user.admin?
     else
       flash[:notice] = "Please enter thine information correctly."
       render :edit
