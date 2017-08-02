@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
+
+  namespace :admin do
+    get '/dashboard', to: 'admin#index'
+    resources :items, only: [:new, :create, :index, :show, :edit, :update]
+  end
+
   resources :items, only: [:index, :show]
   resources :carts, only: [:create]
   resources :users, only: [:new, :create]
-  resources :orders, only: [:index, :show, :create]
+  resources :orders, only: [:index, :show, :create, :update]
 
   get '/edit_account', to: 'users#edit'
   patch '/update_account', to: 'users#update'
@@ -18,6 +24,7 @@ Rails.application.routes.draw do
   get '/cart', to: 'carts#index'
 
   get '/admin', to: 'sessions#new'
+
 
   get '/about', to: 'categories#about'
   get '/:category_title', to: 'categories#show'
