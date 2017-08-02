@@ -6,4 +6,29 @@ RSpec.describe Cart do
     #RESERVED FOR LATER
 
   end
+
+  context "instance methods" do
+    before :each do
+      @item_1, @item_2, @item_3 = create_list(:item, 3)
+      @cart = Cart.new(nil)
+
+      @cart.add_item(@item_1.id)
+      @cart.add_item(@item_1.id)
+      @cart.add_item(@item_2.id)
+    end
+
+    it "#add_item adds item to cart" do
+      expected = {@item_1.id.to_s => 2, @item_2.id.to_s => 1}
+      expect(@cart.contents).to eq(expected)
+    end
+
+    it "#total_price returns total cart price" do
+      expected = @item_1.price * 2 + @item_2.price
+      expect(@cart.total_price).to eq(expected)
+    end
+    it "#item_subtotal returns total cart price" do
+      expected = @item_1.price * 2 + @item_2.price
+      expect(@cart.total_price).to eq(expected)
+    end
+  end
 end
