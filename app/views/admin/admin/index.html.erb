@@ -41,7 +41,7 @@
       <table class="table">
 
       <tbody>
-        <% @orders.ordered.each do |order| %>
+        <% @orders.find_all_by_status("ordered").each do |order| %>
         <tr>
             <td><%= link_to "order-#{order.id}", order_path(order)%></td>
             <td><%= button_to "Mark As Paid", order_path(id: order.id, new_status: "paid"), method: :patch, class: "btn btn-default" %></td>
@@ -57,7 +57,7 @@
       <table class="table">
 
       <tbody>
-        <% @orders.paid.each do |order| %>
+        <% @orders.find_all_by_status("paid").each do |order| %>
         <tr>
             <td><%= link_to "order-#{order.id}", order_path(order)%></td>
             <td><%= button_to "Mark As Completed", order_path(id: order.id, new_status: "completed"), method: :patch, class: "btn btn-default" %></td>
@@ -73,7 +73,7 @@
       <table class="table">
 
       <tbody>
-        <% @orders.cancelled.each do |order| %>
+        <% @orders.find_all_by_status("cancelled").each do |order| %>
         <tr>
             <td><%= link_to "order-#{order.id}", order_path(order)%></td>
         </tr>
@@ -87,7 +87,7 @@
       <table class="table">
 
       <tbody>
-        <% @orders.completed.each do |order| %>
+        <% @orders.find_all_by_status("completed").each do |order| %>
         <tr>
           <td><%= link_to "order-#{order.id}", order_path(order)%></td>
         </tr>
