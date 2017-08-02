@@ -1,20 +1,35 @@
+<h1 class="text-center">Thine Items</h1><br/><br/><br/>
+
+<div class="container text-center opaque admin-items">
+
+  <div class="row">
+
+    <div class="col-md-12">
+
+
 <table>
-  <thead>
-      <th></th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Status</th>
-      <th>Action</th>
+  <thead class="table-headings">
+      <th class="text-center table-headings"></th>
+      <th class="text-center table-headings">Title</th>
+      <th class="text-center table-headings">Description</th>
+      <th class="text-center table-headings">Status</th>
+      <th class="text-center table-headings admin-item-edit-button">Action</th>
   </thead>
   <tbody>
     <% @items.each do |item| %>
     <tr>
-      <th scope = "row"><img class="img-responsive item-images img-thumbnail" src="<%= item.image_path %>" alt="item image"></th>
+      <th scope="row"><img class="img-responsive item-images img-thumbnail small-item-images" src="<%= item.image_path %>" alt="item image"></th>
       <td><%= link_to item.title, admin_item_path(item) %></td>
       <td><%= item.description %></td>
       <td><%= item.status.capitalize %></td>
-      <td><%= link_to "Edit", edit_admin_item_path(item) %></td>
+      <td class="admin-item-edit-button"><%= button_to "Edit", edit_admin_item_path(item), class: "btn btn-primary" %></td>
     </tr>
     <% end %>
   </tbody>
 </table>
+
+</div>
+
+</div>
+
+</div>
