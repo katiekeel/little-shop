@@ -19,6 +19,6 @@ RSpec.feature "User visits category show page" do
     expect(page).to have_content(item_2.price)
     expect(page).to_not have_content(item_3.price)
     expect(page).to_not have_content(item_4.price)
-    expect(page).to have_css("img", count:2)
+    expect(page).to have_css("img", count: 4)
   end
 end

@@ -16,11 +16,11 @@ RSpec.feature "cart persists" do
     visit items_path
 
     within(".item-#{item_1.id}") do
-      click_on("Add to Cart")
+      find(:css, ".index-cart").click
     end
 
     within(".item-#{item_2.id}") do
-      click_on("Add to Cart")
+      find(:css, ".index-cart").click
     end
 
     click_link "Cart"
@@ -43,14 +43,6 @@ RSpec.feature "cart persists" do
     click_button("Loggeth Thou In")
 
     visit items_path
-
-    within(".item-#{item_1.id}") do
-      click_on("Add to Cart")
-    end
-
-    within(".item-#{item_2.id}") do
-      click_on("Add to Cart")
-    end
 
     click_link "Cart"
 
