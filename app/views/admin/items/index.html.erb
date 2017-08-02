@@ -9,7 +9,7 @@
   <tbody>
     <% @items.each do |item| %>
     <tr>
-      <th scope = "row"><img class="img-responsive item-images img-thumbnail" src="<%= item.image_path %>" alt="item image"></th>
+      <th scope = "row"><img class="img-responsive item-images img-thumbnail small-item-images" src="<%= item.image_path %>" alt="item image"></th>
       <td><%= link_to item.title, admin_item_path(item) %></td>
       <td><%= item.description %></td>
       <td><%= item.status.capitalize %></td>
