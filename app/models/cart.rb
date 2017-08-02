@@ -1,5 +1,4 @@
 class Cart
-
   attr_reader :contents
 
   def initialize(contents)
@@ -11,9 +10,9 @@ class Cart
   end
 
   def total_price
-    contents.map do |key, value|
-      Item.where(id: key).sum(:price) * value
-    end.sum
+    contents.reduce(0) do |sum, contents|
+      sum + Item.find(contents[0]).price * contents[1]
+    end
   end
 
   def item_subtotal(item)
