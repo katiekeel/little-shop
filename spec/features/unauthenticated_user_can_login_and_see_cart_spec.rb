@@ -24,6 +24,8 @@ RSpec.feature "visitor can add items to cart and upon login" do
     fill_in "user[username]", with: "Bilbo"
     fill_in "user[password]", with: "Bilbo123"
     fill_in "user[password_confirmation]", with: "Bilbo123"
+    fill_in "user[full_name]", with: "Aragorn Elessar"
+    fill_in "user[address]", with: "City of Gondor"
 
     click_button("Signeth Thou Up")
 
