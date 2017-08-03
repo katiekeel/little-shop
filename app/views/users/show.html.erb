@@ -25,7 +25,7 @@
 
   <div class="tab-pane" id="orders" role="tabpanel">
     <p><%= link_to "Orders Belonging to Thee", "/orders" %></p>
-    <p>Most Ordered Item: <%= link_to @user.most_ordered_item.title, item_path(@user.most_ordered_item) unless @user.most_ordered_item.nil? %></p>
+    <p>Most Ordered Item: <%= link_to @user.most_ordered_item.title, item_path(@user.most_ordered_item) unless @user.orders.empty? %></p>
   </div>
 
   <div class="tab-pane" id="delete" role="tabpanel">
