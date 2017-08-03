@@ -1,11 +1,13 @@
 describe "Admin edits an item" do
   context "with valid attributes" do
     scenario "and sees it on the admin items index" do
+
       item_1, item_2 = create_list(:item, 2)
       admin = create(:user, role: "admin")
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
       visit '/admin/items'
+
       first(:link, "Edit").click
 
       expect(current_path).to eq "/admin/items/#{item_1.id}/edit"
